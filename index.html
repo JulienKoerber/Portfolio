@@ -7,19 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Lien vers le fichier CSS séparé -->
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <!-- Navigation -->
   <nav class="nav">
     <ul class="nav__list">
-      <li><a href="#intro" class="nav__link">Accueil</a></li>
-      <li><a href="#competences" class="nav__link">Compétences</a></li>
-      <li><a href="#projets" class="nav__link">Projets</a></li>
-      <li><a href="CV_Julien_Koerber.pdf" class="nav__link" target="_blank">CV</a></li>
+      <li><a href="index.html" class="nav__link">Accueil</a></li>
+      <li><a href="index.html#competences" class="nav__link">Compétences</a></li>
+      <li><a href="index.html#projets" class="nav__link">Projets</a></li>
+      <li><a href="Mon_CV.pdf" class="nav__link" target="_blank">CV</a></li>
     </ul>
   </nav>
 
@@ -58,25 +56,25 @@
   <!-- Section Projets -->
   <section id="projets" class="section section--projects">
     <h2 class="section__title">Mes Projets</h2>
-    <div class="skills-grid"> <!-- Réutilisation de la grille compétences -->
-      <div class="skill-card">
+    <div class="skills-grid">
+      <a href="projet1.html" class="skill-card card-link">
         <h3>SAE 3.01</h3>
-        <p>...</p>
-      </div>
-      <div class="skill-card">
+        <p>Projet prise wifi conncetée</p>
+      </a>
+      <a href="projet2.html" class="skill-card card-link">
         <h3>SAE 3.02</h3>
-        <p>...</p>
-      </div>
-      <div class="skill-card">
+        <p>Développement d'un cluster de données</p>
+      </a>
+      <a href="projet3.html" class="skill-card card-link">
         <h3>SAE 3.03</h3>
-        <p>..</p>
-      </div>
+        <p>Déploiment d'un réseau Multisite</p>
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 - Julien Koerber. Tous droits réservés.</p>
+    <p>&copy; 2025 - Julien Koerber</p>
   </footer>
 </body>
 </html>
