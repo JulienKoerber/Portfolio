@@ -1,0 +1,209 @@
+:root {
+  --clr-primary: #2a3eb1;
+  --clr-secondary: #f0f4ff;
+  --clr-accent: #ff5a5f;
+  --clr-text: #333333;
+  --font-base: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--clr-text);
+  background-color: var(--clr-secondary);
+  scroll-behavior: smooth;
+  /* Décalage pour la nav fixe */
+  padding-top: 4rem;
+}
+
+/* Titres */
+.h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--clr-primary);
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+.nav__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+}
+.nav__link {
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--clr-primary);
+  transition: color 0.3s;
+}
+.nav__link:hover {
+  color: var(--clr-accent);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+/* Intro */
+.section--intro {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+  color: white;
+  text-align: center;
+}
+.intro__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.highlight {
+  color: var(--clr-accent);
+}
+.intro__subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Compétences et Projets */
+.section--skills {
+  background-color: white;
+}
+.section--skills2 {
+  background-color: rgb(162, 162, 253);
+}
+.section__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--clr-primary);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.skill-card {
+  background: var(--clr-secondary);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s;
+  text-decoration: none;
+  color: inherit;
+}
+.skill-card:hover {
+  transform: translateY(-10px);
+}
+.skill-card h3 {
+  margin-bottom: 1rem;
+  color: var(--clr-primary);
+  font-size: 1.5rem;
+}
+.skill-card p {
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  background-color: var(--clr-primary);
+  color: white;
+}
+.footer p {
+  margin: 0;
+}
+
+/* ----------------------------------------- */
+/* Styles spécifiques à la page projet1.html */
+/* ----------------------------------------- */
+
+/* Titre principal de la page projet */
+.page-main-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0 1rem;
+  color: var(--clr-primary);
+}
+
+/* Bannière projet */
+.project-header {
+  width: 100%;
+  overflow: hidden;
+}
+.project-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Titre secondaire (nom du projet) */
+.project-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0 2rem;
+  color: var(--clr-primary);
+}
+
+/* Contenu projet en grille responsive */
+.project-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.text-block {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+  transition: transform 0.3s;
+}
+.text-block:hover {
+  transform: translateY(-5px);
+}
+.text-block h2,
+.text-block h3 {
+  color: var(--clr-primary);
+  margin-bottom: 1rem;
+}
+.text-block p {
+  line-height: 1.6;
+  color: var(--clr-text);
+}
+
+/* Ajustements mobiles */
+@media (max-width: 600px) {
+  .project-title {
+    font-size: 1.8rem;
+  }
+  .project-content {
+    padding: 2rem 1rem;
+  }
+}
