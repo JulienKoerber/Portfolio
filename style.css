@@ -73,6 +73,9 @@
   .section--skills {
     background-color: white;
   }
+  .section--skills2 {
+    background-color: rgb(162, 162, 253);
+  }
   .section__title {
     text-align: center;
     font-size: 2.5rem;
