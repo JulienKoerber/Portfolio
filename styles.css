@@ -17,8 +17,7 @@ body {
   color: var(--clr-text);
   background-color: var(--clr-secondary);
   scroll-behavior: smooth;
-  /* Décalage pour la nav fixe */
-  padding-top: 4rem;
+  padding-top: 4rem; /* Pour compenser la nav fixe */
 }
 
 /* Titres */
@@ -57,7 +56,7 @@ body {
 
 /* Sections */
 .section {
-  padding: 4rem 0;
+  padding: 5rem 2rem;
 }
 
 /* Intro */
@@ -144,9 +143,10 @@ body {
 /* Titre principal de la page projet */
 .page-main-title {
   text-align: center;
-  font-size: 3rem;
-  margin: 2rem 0 1rem;
+  font-size: 3.2rem;
+  margin: 2rem 0;
   color: var(--clr-primary);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 /* Bannière projet */
@@ -172,37 +172,73 @@ body {
 /* Contenu projet en grille responsive */
 .project-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+  gap: 3rem;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1600px; /* Largeur max étendue */
 }
+
+/* Bloc texte amélioré */
 .text-block {
   background: white;
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 2rem;
-  transition: transform 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .text-block:hover {
   transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 .text-block h2,
 .text-block h3 {
   color: var(--clr-primary);
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 .text-block p {
-  line-height: 1.6;
   color: var(--clr-text);
+}
+
+/* Listes stylisées */
+.text-block ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+.text-block ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  list-style-type: disc;
+}
+.text-block ul ul {
+  margin-top: 0.25rem;
+  list-style-type: circle;
 }
 
 /* Ajustements mobiles */
 @media (max-width: 600px) {
+  .page-main-title {
+    font-size: 2.2rem;
+  }
+
   .project-title {
     font-size: 1.8rem;
   }
+
+  .text-block {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .text-block h2 {
+    font-size: 1.5rem;
+  }
+
   .project-content {
     padding: 2rem 1rem;
   }

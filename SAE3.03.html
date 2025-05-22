@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAE3.03 - Mon Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAE 3.02</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav class="nav">
     <ul class="nav__list">
       <li><a href="index.html" class="nav__link">Accueil</a></li>
@@ -15,9 +18,60 @@
       <li><a href="Mon_CV.pdf" class="nav__link" target="_blank">CV</a></li>
     </ul>
   </nav>
+
+  <!-- Section principale du projet -->
   <section class="section">
-    <h1>Projet 1</h1>
-    <p>Ici la description détaillée de ton projet 1.</p>
+    <h1 class="page-main-title">SAE 3.03 : Architecture Réseau LAN Multi-Sites</h1>
+
+    <div class="project-content">
+
+      <!-- Bloc Objectif -->
+      <div class="text-block">
+        <h2>Objectif du Projet</h2>
+        <p>
+          Le projet consiste à concevoir l’<strong>architecture réseau LAN</strong> de deux entreprises 
+          (UC Exchange et ABC Conseil) réparties sur plusieurs sites (Strasbourg, Nancy, Metz). 
+          Chaque site dispose d’un réseau local structuré en architecture <strong>commutée hiérarchique</strong>, 
+          avec des <strong>liens redondants</strong> entre les commutateurs pour assurer la 
+          <strong>tolérance aux pannes</strong>.
+        </p>
+      </div>
+
+      <!-- Bloc Exigences -->
+      <div class="text-block">
+        <h2>Exigences Techniques</h2>
+        <ul>
+          <li>Mise en place du protocole <strong>MST (Multiple Spanning Tree)</strong> pour éviter les boucles et garantir la redondance.</li>
+          <li>Création de <strong>VLANs</strong> par service selon le plan d’adressage IP fourni.</li>
+          <li>Activation du <strong>routage inter-VLAN</strong> sur les équipements de niveau 3.</li>
+          <li>Configuration du <strong>PAT (Port Address Translation)</strong> pour l'accès à l’extérieur.</li>
+          <li>Implémentation de la <strong>haute disponibilité</strong> avec le protocole <strong>VRRP</strong>.</li>
+          <li>Attribution :
+            <ul>
+              <li><strong>statique</strong> des adresses IP pour les équipements réseau,</li>
+              <li><strong>dynamique</strong> via DHCP pour les machines clientes.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bloc Compétences -->
+      <div class="text-block" style="grid-column: 1 / -1; text-align: center;">
+        <h2>Compétences Acquises</h2>
+        <p>
+          Ce projet m’a permis de développer des compétences solides en <strong>conception d’architectures réseau LAN</strong> multi-sites, 
+          en <strong>configuration avancée des équipements réseau</strong> (VLAN, routage, redondance, NAT) 
+          ainsi qu’en <strong>sécurisation et optimisation</strong> des infrastructures informatiques.
+        </p>
+        <p>
+          J’ai acquis une maîtrise concrète des protocoles comme <strong>MST</strong> et <strong>VRRP</strong>, 
+          et j’ai renforcé mes compétences en <strong>planification réseau</strong>, 
+          <strong>gestion d’adressage IP</strong> et <strong>haute disponibilité</strong>.
+        </p>
+      </div>
+
+    </div>
   </section>
+
 </body>
 </html>
