@@ -1,77 +1,65 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAE 3.02</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+<section class="section">
   <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <h1 class="page-main-title">SAE 3.03 – Architecture Réseau LAN Multi-Sites</h1>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <ul class="nav__list">
-      <li><a href="index.html" class="nav__link">Accueil</a></li>
-      <li><a href="index.html#projets" class="nav__link">Projets</a></li>
-      <li><a href="Mon_CV.pdf" class="nav__link" target="_blank">CV</a></li>
-    </ul>
-  </nav>
+  <div class="project-content">
 
-  <!-- Section principale du projet -->
-  <section class="section">
-    <h1 class="page-main-title">SAE 3.03 : Architecture Réseau LAN Multi-Sites</h1>
-
-    <div class="project-content">
-
-      <!-- Bloc Objectif -->
-      <div class="text-block">
-        <h2>Objectif du Projet</h2>
-        <p>
-          Le projet consiste à concevoir l’<strong>architecture réseau LAN</strong> de deux entreprises 
-          (UC Exchange et ABC Conseil) réparties sur plusieurs sites (Strasbourg, Nancy, Metz). 
-          Chaque site dispose d’un réseau local structuré en architecture <strong>commutée hiérarchique</strong>, 
-          avec des <strong>liens redondants</strong> entre les commutateurs pour assurer la 
-          <strong>tolérance aux pannes</strong>.
-        </p>
-      </div>
-
-      <!-- Bloc Exigences -->
-      <div class="text-block">
-        <h2>Exigences Techniques</h2>
-        <ul>
-          <li>Mise en place du protocole <strong>MST (Multiple Spanning Tree)</strong> pour éviter les boucles et garantir la redondance.</li>
-          <li>Création de <strong>VLANs</strong> par service selon le plan d’adressage IP fourni.</li>
-          <li>Activation du <strong>routage inter-VLAN</strong> sur les équipements de niveau 3.</li>
-          <li>Configuration du <strong>PAT (Port Address Translation)</strong> pour l'accès à l’extérieur.</li>
-          <li>Implémentation de la <strong>haute disponibilité</strong> avec le protocole <strong>VRRP</strong>.</li>
-          <li>Attribution :
-            <ul>
-              <li><strong>statique</strong> des adresses IP pour les équipements réseau,</li>
-              <li><strong>dynamique</strong> via DHCP pour les machines clientes.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Bloc Compétences -->
-      <div class="text-block" style="grid-column: 1 / -1; text-align: center;">
-        <h2>Compétences Acquises</h2>
-        <p>
-          Ce projet m’a permis de développer des compétences solides en <strong>conception d’architectures réseau LAN</strong> multi-sites, 
-          en <strong>configuration avancée des équipements réseau</strong> (VLAN, routage, redondance, NAT) 
-          ainsi qu’en <strong>sécurisation et optimisation</strong> des infrastructures informatiques.
-        </p>
-        <p>
-          J’ai acquis une maîtrise concrète des protocoles comme <strong>MST</strong> et <strong>VRRP</strong>, 
-          et j’ai renforcé mes compétences en <strong>planification réseau</strong>, 
-          <strong>gestion d’adressage IP</strong> et <strong>haute disponibilité</strong>.
-        </p>
-      </div>
-
+    <!-- Bloc 1 : Objectif -->
+    <div class="text-block">
+      <h2>Objectif du Projet</h2>
+      <p>
+        Le projet consiste à concevoir l’<strong>architecture réseau LAN</strong> de deux entreprises 
+        (UC Exchange et ABC Conseil) réparties sur plusieurs sites (Strasbourg, Nancy, Metz). 
+        Chaque site dispose d’un réseau local structuré en architecture <strong>commutée hiérarchique</strong>, 
+        avec des <strong>liens redondants</strong> entre les commutateurs pour assurer la 
+        <strong>tolérance aux pannes</strong>.
+      </p>
     </div>
-  </section>
 
-</body>
-</html>
+    <!-- Bloc 2 : Exigences -->
+    <div class="text-block">
+      <h2>Exigences Techniques</h2>
+      <ul>
+        <li>Mise en place du protocole <strong>MST (Multiple Spanning Tree)</strong> pour éviter les boucles et garantir la redondance.</li>
+        <li>Création de <strong>VLANs</strong> par service selon le plan d’adressage IP fourni.</li>
+        <li>Activation du <strong>routage inter-VLAN</strong> sur les équipements de niveau 3.</li>
+        <li>Configuration du <strong>PAT (Port Address Translation)</strong> pour l'accès à l’extérieur.</li>
+        <li>Implémentation de la <strong>haute disponibilité</strong> avec le protocole <strong>VRRP</strong>.</li>
+        <li>Attribution :
+          <ul>
+            <li><strong>statique</strong> des adresses IP pour les équipements réseau,</li>
+            <li><strong>dynamique</strong> via DHCP pour les machines clientes.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bloc 3 : Compétences -->
+    <div class="text-block">
+      <h2>Compétences Acquises</h2>
+      <p>
+        Ce projet m’a permis de développer des compétences solides en <strong>conception d’architectures réseau LAN</strong> multi-sites, 
+        en <strong>configuration avancée des équipements réseau</strong> (VLAN, routage, redondance, NAT) 
+        ainsi qu’en <strong>sécurisation et optimisation</strong> des infrastructures informatiques.
+      </p>
+      <p>
+        J’ai acquis une maîtrise concrète des protocoles comme <strong>MST</strong> et <strong>VRRP</strong>, 
+        et j’ai renforcé mes compétences en <strong>planification réseau</strong>, 
+        <strong>gestion d’adressage IP</strong> et <strong>haute disponibilité</strong>.
+      </p>
+    </div>
+
+    <!-- Bloc 4 : Téléchargements -->
+    <div class="text-block">
+      <h2>Téléchargements</h2>
+      <ul>
+        <li><a href="Preuves_303/Rapport partie LAN.docx" download class="download-link">📄 Rapport partie LAN (Docx)</a></li>
+        <li><a href="Preuves_303/SAE303Julien.gns3" download class="download-link">💻 Projet GNS3 (GNS3)</a></li>
+        <li><a href="Preuves_303/LAN-Final.zip" download class="download-link">💽 LAN Final (ZIP)</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-container">
+  <img src="Images/GNS3.png" alt="Schéma ou illustration du projet" class="project-image" />
+</div>
+</section>

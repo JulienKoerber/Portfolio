@@ -243,3 +243,27 @@ body {
     padding: 2rem 1rem;
   }
 }
+/* Bouton de téléchargement */
+.download-link {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.download-link:hover {
+  color: var(--clr-accent);
+}
+
+/* Styles pour les images de projet */
+.image-container {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.project-image {
+  max-width: 100%;  /* Évite que l’image dépasse sur petits écrans */
+  height: auto;     /* Conserve les proportions naturelles */
+  display: inline-block;
+}
