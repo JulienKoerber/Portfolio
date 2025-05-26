@@ -15,10 +15,9 @@
   <nav class="nav">
     <ul class="nav__list">
       <li><a href="index.html" class="nav__link">Accueil</a></li>
-      <li><a href="index.html#competences" class="nav__link">Compétences</a></li>
-      <li><a href="index.html#projets" class="nav__link">Projets</a></li>
-      <li><a href="Documents/CV_Julien_Koerber.pdf" class="nav__link" target="_blank">CV 🇫🇷 !</a></li>
-      <li><a href="Documents/CV_Julien_Koerber_English.pdf" class="nav__link" target="_blank">CV 🇬🇧 !</a></li>
+      <li><a href="stage.html" class="nav__link">Stage</a></li>
+      <li><a href="Documents/CV_Julien_Koerber.pdf" class="nav__link" target="_blank">CV 🇫🇷</a></li>
+      <li><a href="Documents/CV_Julien_Koerber_English.pdf" class="nav__link" target="_blank">CV 🇬🇧 </a></li>
     </ul>
   </nav>
 
@@ -45,32 +44,60 @@
     </div>
   </section>
 
-  <!-- Section Compétences 2ème année -->
-  <section id="competences" class="section section--skills">
-    <h2 class="section__title">Compétences de 2ème année</h2>
-    <div class="skills-grid">
+<!-- Section Compétences 2ème année -->
+<section id="competences" class="section section--skills">
+  <h2 class="section__title">Administrer un Réseau</h2>
+
+  <div class="slider-wrapper">
+    <button class="scroll-btn left" onclick="scrollLeft()">&#8592;</button>
+
+    <div class="scroll-container">
       <div class="skill-card">
         <h3>Routage avancé</h3>
         <p>protocoles OSPF, BGP, EIGRP</p>
-      </div>
-      <div class="skill-card">
-        <h3>Commutation</h3>
-        <p>Spanning Tree, VXLAN, SD-LAN</p>
+        <p>AC11.02 Comprendre l’architecture des systèmes numériques, des communications et de l’Internet</p>
+        <p>AC11.03 Configurer les fonctions de base du réseau local</p>
+        <p>AC11.05 Identifier les dysfonctionnements du réseau local et savoir les signaler</p>
+        <p>AC21.01 Configurer et dépanner le routage dynamique dans un réseau</p>
+        <p>AAC21.04 Déployer des services réseaux avancés</p>
+        <p>AC21.05 Identifier les réseaux opérateurs et l’architecture d’Internet</p>
       </div>
       <div class="skill-card">
         <h3>Sécurité et chiffrement</h3>
-        <p>pare-feu de nouvelle génération, IDS/IPS, VPN SSL/IPSec</p>
+        <p>AC11.02 Comprendre les communications et la structure d’Internet</p>
+        <p>AC11.05 Identifier les dysfonctionnements du réseau local</p>
+        <p>AC21.02 Configurer et expliquer une politique simple de QoS </br>et les fonctions de base de la sécurité d’un réseau</p>
       </div>
       <div class="skill-card">
         <h3>Administration système avancée</h3>
-        <p>gestion de clusters Linux, HA sous Windows Server, scripts avancés (Bash, PowerShell)</p>
+        <p>AC11.04 Maîtriser les systèmes d’exploitation pour la configuration et l’administration</p>
+        <p>AC11.06 Installer un poste client et expliquer la procédure</p>
+        <p>AC21.03 Déployer des postes clients et des solutions virtualisées adaptées</p>
+        <p>AC21.04 Déployer des services réseaux avancés</p>
+        <p>AC21.06 Travailler en équipe pour développer ses compétences professionnelles</p>
       </div>
       <div class="skill-card">
-        <h3>Conteneurs</h3>
-        <p>Maitrise de Docker et des Conteneurs</p>
+        <h3>Commutation, Administration système avancée, Routage avancé</h3>
+        <p>AC11.01 Maîtriser les lois fondamentales de l’électricité pour intervenir sur les équipements</p>
+        <p>AC11.02 Comprendre l’architecture et les communications numériques</p>
+        <p>AC11.03 Configurer les fonctions de base du réseau local</p>
+        <p>AC21.04 Déployer des services réseaux avancés</p>
+        <p>AC21.05 Identifier les réseaux opérateurs et l’architecture d’Internet</p>
+      </div>
+      <div class="skill-card">
+        <h3>AC21.05 Identifier les réseaux opérateurs et l’architecture d’Internet</h3>
+        <p>Routage avancé, Commutation</p>
+      </div>
+      <div class="skill-card">
+        <h3>AC21.06 Travailler en équipe pour développer ses compétences professionnelles</h3>
+        <p>Toutes les compétences, en particulier Administration système avancée et Conteneurs (qui nécessitent souvent une collaboration en DevOps)</p>
       </div>
     </div>
-  </section>
+
+    <button class="scroll-btn right" onclick="scrollRight()">&#8594;</button>
+  </div>
+</section>
+
 
   <!-- Section Projets -->
   <section id="projets" class="section section--projects">
@@ -150,5 +177,33 @@
   <footer class="footer">
     <p>&copy; 2025 - Julien Koerber</p>
   </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollContainer = document.querySelector('#competences .scroll-container');
+    const cards = scrollContainer.querySelectorAll('.skill-card');
+    let currentIndex = 0;
+
+    const scrollToCard = (index) => {
+      if (index < 0 || index >= cards.length) return;
+      cards[index].scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest' // <-- empêche la page de remonter
+      });
+      currentIndex = index;
+    };
+
+    document.querySelector('#competences .scroll-btn.left').addEventListener('click', () => {
+      scrollToCard(currentIndex - 1);
+    });
+
+    document.querySelector('#competences .scroll-btn.right').addEventListener('click', () => {
+      scrollToCard(currentIndex + 1);
+    });
+  });
+</script>
+
+
+
 </body>
 </html>

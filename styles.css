@@ -291,3 +291,45 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
+
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.scroll-btn {
+  background-color: var(--clr-primary, #2a3eb1);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: var(--clr-accent, #ff5a5f);
+}
+
+.skill-card {
+  min-width: 280px;
+  flex-shrink: 0;
+}
