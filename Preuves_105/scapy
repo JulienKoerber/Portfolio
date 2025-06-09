@@ -1,0 +1,48 @@
+import argparse
+from scapy.all import *
+
+
+def active_discovery(ip):
+    print(f"Active discovery for {ip}")
+    #envoi un paquet ICMP et attend une réponse
+    reply = sr1(IP(dst=ip)/ICMP())
+    if reply is not None:
+        print(f"Host {ip} is up")
+    
+
+def passive_discovery(ip):
+    print(f"Passive discovery for {ip}")
+    #écoute les demandes et réponses ARP
+    packets = sniff(filter="arp", count=10)
+    for packet in packets:
+        if packet.psrc == ip or packet.pdst == ip:
+            print(f"Host {ip} is up")
+
+def test_network(network):
+    print(f"Testing all hosts in {network}")
+    #envoi un requête ICMP à tout les hôtes connectés au réseau
+    ans, unans = sr(IP(dst=network)/ICMP(), timeout=2)
+    for sent, received in ans:
+        print(f"Host {received.src} is up")
+
+def write_fichier(name_fichier, return_commande):
+    with open(name_fichier, "a") as file:
+        file.write(return_commande + "\n")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-a", "--active", help="Perform active discovery")
+    parser.add_argument("-p", "--passive", help="Perform passive discovery")
+    parser.add_argument("-t", "--test", help="Test all hosts in a network")
+    parser.add_argument("-x", "--export", help="Export results to a file")
+    args = parser.parse_args()
+
+    if args.active:
+        active_discovery(args.active)
+    if args.passive:
+        passive_discovery(args.passive)
+    if args.test:
+        test_network(args.test)
+
+if __name__ == "__main__":
+    main()

