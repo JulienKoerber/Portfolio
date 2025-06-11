@@ -4,8 +4,7 @@
 
 <section class="section">
   <link rel="stylesheet" href="styles.css">
-  <h1 class="page-main-title">SAE 3.03 – Architecture Réseau LAN Multi-Sites</h1> <br>
-  <h2>Page en développement...</h2> <br>
+  <h1 class="page-main-title">SAE 3.04 – Mettre en place une infrastructure virtualisée</h1> <br>
 
   <div class="project-content">
 
@@ -25,14 +24,24 @@
     <div class="text-block">
       <h2>Exigences Techniques</h2>
       <ul>
-        
+        <li>Environnements : Prod (PrestaShop + Odoo16, SLA ≥ 99,9 %, RPO ≤ 1 h), Staging, Dev</li>
+        <li>OVH Cloud Public :</li>
+        <li>2× Web/App PrestaShop (4 vCore, 8 Go RAM, SSD 100 Go)</li>
+        <li>2× App Odoo 16 (4 vCore, 8 Go RAM, SSD 100 Go)</li>
+        <li>MariaDB Galera 3-nœuds (4 vCore, 16 Go RAM)</li>
+        <li>PostgreSQL master+standby (4 vCore, 16 Go RAM)</li>
+        <li>OS : Ubuntu 22.04 LTS</li>
       </ul>
     </div>
 
     <!-- Bloc 3 : Compétences -->
     <div class="text-block">
       <h2>Compétences Acquises</h2>
-      
+      <li>Analyse des besoins fonctionnels et techniques pour un site e-commerce (PrestaShop) et un ERP (Odoo)</li>
+      <li>Rédaction du cahier des charges et des spécifications d’architecture cloud (OVH Public Cloud, vRack, IP statiques)</li>
+      <li>Conception d’une topologie réseau sécurisée (load-balancer, firewall OVH, isolation via vRack)</li>
+      <li>Élaboration d’une stratégie de haute disponibilité et de montée en charge (Galera, réplication PostgreSQL, auto-scaling, health-checks)</li>
+      <li>Préparation d’un plan de supervision et d’alerting 24/7 (métriques, logs centralisés, Grafana Alertmanager)</li>
     </div>
 
     <!-- Bloc 4 : Téléchargements -->
@@ -44,6 +53,6 @@
     </div>
   </div>
   <div class="image-container">
-  <img src="Images/.png" alt="Schéma ou illustration du projet" class="project-image" />
+  <img src="Images/Logo_OVH.png" class="project-image" />
 </div>
 </section>
