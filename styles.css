@@ -102,6 +102,14 @@ body {
   max-width: 1200px;
   margin: auto;
 }
+
+/* On place la 3ème carte sur la 2ème ligne, centrée et pleine largeur */
+.skills-grid .skill-card:nth-child(3) {
+  grid-row: auto;        /* commence à la ligne 2 */
+  grid-column: auto; /* occupe toutes les colonnes */
+  justify-self: center;/* centre la carte si elle ne remplit pas toute la largeur */
+}
+
 .skill-card {
   background: var(--clr-secondary);
   border-radius: 1rem;
