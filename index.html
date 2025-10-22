@@ -24,241 +24,372 @@
 
   <!-- Section Intro -->
   <section id="intro" class="section section--intro">
-    <div class="intro__content">
-      <h1 class="intro__title">Bonjour, je suis <span class="highlight">Julien Koerber</span></h1>
-      <p class="intro__subtitle">Je suis étudiant en BUT Réseaux et Télécommunications</p>
-      <p class="intro__subtitle">Spécialité Développement Cloud</p> <br>
-      <p class="intro__subtitle">Prenez connaissance de l'ensemble des <strong>Apprentissages Critiques</strong> ainsi que les <strong>Composantes Essentielles</strong> de mon BUT</p> <br>
-      <p class="intro__subtitle">Découvrez ensuite <strong>mes projets (SAE)</strong> réalisés tout au long de ma formation</p>
+    <div class="intro__container">
+      <!-- Partie gauche - Photo et nom -->
+      <div class="intro__left">
+        <div class="intro__photo">
+          <img src="Images/pdp.jpeg" alt="Photo de Julien Koerber" class="intro__image" />
+        </div>
+        <h1 class="intro__name"><span class="highlight">Julien Koerber</span></h1>
+      </div>
+      
+      <!-- Partie droite - Contenu -->
+      <div class="intro__right">
+        <div class="intro__greeting">👋 Bonjour, bienvenue sur mon portfolio</div>
+        <h2 class="intro__role">Étudiant en BUT Réseaux & Télécommunications</h2>
+        <div class="intro__specialty">Spécialité Développement Cloud</div>
+        
+        <p class="intro__description">
+          Passionné par les technologies réseau et le cloud, je vous invite à découvrir 
+          mes <strong>compétences</strong> et mes <strong>projets</strong> réalisés durant ma formation.
+        </p>
+        
+        <div class="intro__cta">
+          <a href="#competences" class="intro__btn">Découvrir mon parcours</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section Portfolio 1ère année -->
+  <section id="portfolio-but1" class="section section--portfolio">
+    <h2 class="section__title">Portfolio de 1ère année</h2>
+    <div class="portfolio-container">
+      <a href="https://e-portfolio.uha.fr/view/view.php?t=1ff0c59b94dcf28fbbc5"
+         class="portfolio-card card-link" target="_blank">
+        <div class="portfolio-icon">
+          📚
+        </div>
+        <h3>Portfolio BUT 1</h3>
+        <p>Découvrez mon parcours et mes compétences acquises durant la première année de BUT Réseaux et Télécommunications</p>
+      </a>
     </div>
   </section>
 
   <!-- Section Stage -->
-  <section id="projets" class="section section--projects">
-    <h2 class="section__title">Mon stage -- <strong>Merck KGaA</strong></h2>
-    <div class="skills-grid">
-      <a href="stage.html" class="skill-card card-link">
-        <h3>Stage</h3>
-        <div class="image-container">
-          <img src="Images/Merck_Logo.png" alt="Schéma ou illustration du projet" class="project-image" />
+  <section id="stage" class="section section--stage">
+    <h2 class="section__title">Mon stage chez <strong>Merck KGaA</strong></h2>
+    <div class="stage-container">
+      <a href="stage.html" class="stage-card card-link">
+        <div class="stage-header">
+          <div class="stage-icon">
+            🏢
+          </div>
+          <h3>Stage en entreprise</h3>
+        </div>
+        <div class="stage-content">
+          <div class="company-logo">
+            <img src="Images/Merck_Logo.png" alt="Logo Merck KGaA" class="project-image" />
+          </div>
+          <p class="stage-description">Découvrez mon expérience professionnelle et les projets réalisés durante mon stage</p>
+          <div class="stage-badge">
+            <span>2025</span>
+          </div>
         </div>
       </a>
     </div>
   </section>
 
-<!-- Section Compétences 2ème année -->
- <!-- 1er UE-->
+<!-- Section Compétences 2ème année avec onglets rétractables -->
 <section id="competences" class="section section--skills">
-  <h2 class="section__title">UE X.1 - Administrer un Réseau</h2>
+  <h2 class="section__title">Compétences par UE</h2>
+  
+  <div class="ue-tabs-container">
+  <!-- UE 1 -->
+    <div class="ue-tab">
+      <div class="ue-tab-header" onclick="toggleTab('ue1')">
+        <h3>UE X.1 - Administrer un Réseau</h3>
+        <span class="tab-icon" id="icon-ue1">+</span>
+      </div>
+      <div class="ue-tab-content" id="content-ue1">
+        <div class="skills-two-cols">
+          <!-- Colonne 1 -->
+          <div class="skill-card">
+            <h3>Apprentissages Critiques</h3>
+            <ul>
+              <li>AC21.01 : Configurer et dépanner le routage dynamique dans un réseau</li>
+              <li>AC21.02 : Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d'un réseau</li>
+              <li>AC21.03 : Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</li>
+              <li>AC21.04 : Déployer des services réseaux avancés</li>
+              <li>AC21.05 : Identifier les réseaux opérateurs et l'architecture d'Internet</li>
+              <li>AC21.06 : Travailler en équipe pour développer ses compétences professionnelles</li>
+            </ul>
+          </div>
 
-  <div class="skills-two-cols">
-    <!-- Colonne 1 -->
-    <div class="skill-card">
-      <h3>Apprentissages Critiques</h3>
-      <ul>
-        <li>AC21.01 : Configurer et dépanner le routage dynamique dans un réseau</li>
-        <li>AC21.02 : Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d’un réseau</li>
-        <li>AC21.03 : Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</li>
-        <li>AC21.04 : Déployer des services réseaux avancés</li>
-        <li>AC21.05 : Identifier les réseaux opérateurs et l’architecture d’Internet</li>
-        <li>AC21.06 : Travailler en équipe pour développer ses compétences professionnelles</li>
-      </ul>
+          <!-- Colonne 2 -->
+          <div class="skill-card">
+            <h3>Composantes Essentielles</h3>
+            <ul>
+              <li>CE1.01 : en choisissant les solutions et technologies réseaux adaptées</li>
+              <li>CE1.02 : en respectant les principes fondamentaux de la sécurité informatique</li>
+              <li>CE1.03 : en utilisant une approche rigoureuse pour la résolution des dysfonctionnements</li>
+              <li>CE1.04 : en respectant les règles métiers</li>
+              <li>CE1.05 : en assurant une veille technologique</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Colonne 2 -->
-    <div class="skill-card">
-      <h3>Composantes Essentielles</h3>
-      <ul>
-        <li>CE1.01 : en choisissant les solutions et technologies réseaux adaptées</li>
-        <li>CE1.02 : en respectant les principes fondamentaux de la sécurité informatique</li>
-        <li>CE1.03 : en utilisant une approche rigoureuse pour la résolution des dysfonctionnements</li>
-        <li>CE1.04 : en respectant les règles métiers</li>
-        <li>CE1.05 : en assurant une veille technologique</li>
-      </ul>
+    <!-- UE 2 -->
+    <div class="ue-tab">
+      <div class="ue-tab-header" onclick="toggleTab('ue2')">
+        <h3>UE X.2 - Connecter les entreprises et les usagers</h3>
+        <span class="tab-icon" id="icon-ue2">+</span>
+      </div>
+      <div class="ue-tab-content" id="content-ue2">
+        <div class="skills-two-cols">
+          <!-- Colonne 1 -->
+          <div class="skill-card">
+            <h3>Apprentissages Critiques</h3>
+            <ul>
+              <li>AC22.01 : Déployer et caractériser des systèmes de transmissions complexes</li>
+              <li>AC22.02 : Mettre en place un accès distant sécurisé</li>
+              <li>AC22.03 : Mettre en place une connexion multi-site via un réseau opérateur</li>
+              <li>AC22.04 : Déployer des réseaux d'accès des opérateurs</li>
+              <li>AC22.05 : Capacité à questionner un cahier des charges RT</li>
+            </ul>
+          </div>
+
+          <!-- Colonne 2 -->
+          <div class="skill-card">
+            <h3>Composantes Essentielles</h3>
+            <ul>
+              <li>CE2.01 : en communiquant avec le client et les différents acteurs impliqués, parfois en anglais</li>
+              <li>CE2.02 : en faisant preuve d'une démarche scientifique</li>
+              <li>CE2.03 : en choisissant les solutions et technologies adaptées</li>
+              <li>CE2.04 : en proposant des solutions respectueuses de l'environnement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UE 3 -->
+    <div class="ue-tab">
+      <div class="ue-tab-header" onclick="toggleTab('ue3')">
+        <h3>UE X.3 - Créer des outils et des applications informatiques</h3>
+        <span class="tab-icon" id="icon-ue3">+</span>
+      </div>
+      <div class="ue-tab-content" id="content-ue3">
+        <div class="skills-two-cols">
+          <!-- Colonne 1 -->
+          <div class="skill-card">
+            <h3>Apprentissages Critiques</h3>
+            <ul>
+              <li>AC23.01 : Automatiser l'administration système avec des scripts</li>
+              <li>AC23.02 : Développer une application à partir d'un cahier des charges donné, pour le Web ou les périphériques mobiles</li>
+              <li>AC23.03 : Utiliser un protocole réseau pour programmer une application client/serveur</li>
+              <li>AC23.04 : Installer, administrer un système de gestion de données</li>
+              <li>AC23.05 : Accéder à un ensemble de données depuis une application et/ou un site web</li>
+            </ul>
+          </div>
+
+          <!-- Colonne 2 -->
+          <div class="skill-card">
+            <h3>Composantes Essentielles</h3>
+            <ul>
+              <li>CE3.01 : en étant à l'écoute des besoins du client</li>
+              <li>CE3.02 : en documentant le travail réalisé</li>
+              <li>CE3.03 : en utilisant les outils numériques à bon escient</li>
+              <li>CE3.04 : en choisissant les outils de développement adaptés</li>
+              <li>CE3.05 : en intégrant les problématiques de sécurité</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UE 4 DevCloud -->
+    <div class="ue-tab">
+      <div class="ue-tab-header" onclick="toggleTab('ue4')">
+        <h3>UE X.4 (Orchestrer) - Coordoner des infrastructure modulaires</h3>
+        <span class="tab-icon" id="icon-ue4">+</span>
+      </div>
+      <div class="ue-tab-content" id="content-ue4">
+        <div class="skills-two-cols">
+          <!-- Colonne 1 -->
+          <div class="skill-card">
+            <h3>Apprentissages Critiques</h3>
+            <ul>
+              <li>AC24.01DevCloud | Proposer une solution Cloud adaptée à l'entreprise</li>
+              <li>AC24.02DevCloud | Virtualiser un environnement</li>
+              <li>AC24.03DevCloud | Utiliser les services du Cloud</li>
+              <li>AC24.04DevCloud | Analyser un service Cloud au travers des métriques</li>
+            </ul>
+          </div>
+
+          <!-- Colonne 2 -->
+          <div class="skill-card">
+            <h3>Composantes Essentielles</h3>
+            <ul>
+              <li>CE4.01 | en respectant un cahier des charges</li>
+              <li>CE4.02 | en documentant le travail réalisé</li>
+              <li>CE4.03 | en intégrant les problématiques de sécurité</li>
+              <li>CE4.04 | en assurant une veille technologique</li>
+              <li>CE4.05 | en respectant les pratiques d'équipes et des méthodes de production</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+
+    <!-- UE 5 DevCloud -->
+    <div class="ue-tab">
+      <div class="ue-tab-header" onclick="toggleTab('ue5')">
+        <h3>UE X.5 (Développer) - Accompagner le développement d'applications</h3>
+        <span class="tab-icon" id="icon-ue5">+</span>
+      </div>
+      <div class="ue-tab-content" id="content-ue5">
+        <div class="skills-two-cols">
+          <!-- Colonne 1 -->
+          <div class="skill-card">
+            <h3>Apprentissages Critiques</h3>
+            <ul>
+              <li>AC25.01DevCloud | Développer un microservice</li>
+              <li>AC25.02DevCloud | Mettre en production une application</li>
+              <li>AC25.03DevCloud | Programmer son réseau par le code </li>
+            </ul>
+          </div>
+
+          <!-- Colonne 2 -->
+          <div class="skill-card">
+            <h3>Composantes Essentielles</h3>
+            <ul>
+              <li>CE5.01 | en respectant un cahier des charges</li>
+              <li>CE5.02 | en documentant le travail réalisé</li>
+              <li>CE5.03 | en respectant les bonnes pratiques de développement et de production</li>
+              <li>CE5.04 | en visant l'amélioration continue</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- 2 ème UE-->
-<section id="competences" class="section section--skills">
-  <h2 class="section__title">UE X.2 - Connecter les entreprises et les usagers</h2>
-
-  <div class="skills-two-cols">
-    <!-- Colonne 1 -->
-    <div class="skill-card">
-      <h3>Apprentissages Critiques</h3>
-      <ul>
-        <li>AC22.01 : Déployer et caractériser des systèmes de transmissions complexes</li>
-        <li>AC22.02 : Mettre en place un accès distant sécurisé</li>
-        <li>AC22.03 : Mettre en place une connexion multi-site via un réseau opérateur</li>
-        <li>AC22.04 : Déployer des réseaux d’accès des opérateurs</li>
-        <li>AC22.05 : Capacité à questionner un cahier des charges RT</li>
-      </ul>
-    </div>
-
-    <!-- Colonne 2 -->
-    <div class="skill-card">
-      <h3>Composantes Essentielles</h3>
-      <ul>
-        <li>CE2.01 : en communiquant avec le client et les différents acteurs impliqués, parfois en anglais</li>
-        <li>CE2.02 : en faisant preuve d’une démarche scientifique</li>
-        <li>CE2.03 : en choisissant les solutions et technologies adaptées</li>
-        <li>CE2.04 : en proposant des solutions respectueuses de l'environnement</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 3 ème UE-->
-<section id="competences" class="section section--skills">
-  <h2 class="section__title">UE X.3 - Créer des outils et des applications informatiques</h2>
-
-  <div class="skills-two-cols">
-    <!-- Colonne 1 -->
-    <div class="skill-card">
-      <h3>Apprentissages Critiques</h3>
-      <ul>
-        <li>AC23.01 : Automatiser l’administration système avec des scripts</li>
-        <li>AC23.02 : Développer une application à partir d’un cahier des charges donné, pour le Web ou les périphériques mobiles</li>
-        <li>AC23.03 : Utiliser un protocole réseau pour programmer une application client/serveur</li>
-        <li>AC23.04 : Installer, administrer un système de gestion de données</li>
-        <li>AC23.05 : Accéder à un ensemble de données depuis une application et/ou un site web</li>
-      </ul>
-    </div>
-
-    <!-- Colonne 2 -->
-    <div class="skill-card">
-      <h3>Composantes Essentielles</h3>
-      <ul>
-        <li>CE3.01 : en étant à l’écoute des besoins du client</li>
-        <li>CE3.02 : en documentant le travail réalisé</li>
-        <li>CE3.03 : en utilisant les outils numériques à bon escient</li>
-        <li>CE3.04 : en choisissant les outils de développement adaptés</li>
-        <li>CE3.05 : en intégrant les problématiques de sécurité</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 4 ème UE DevCloud-->
-<section id="competences" class="section section--skills">
-  <h2 class="section__title">UE X.4 (Orchestrer) - Coordoner des infrastructure modulaires</h2>
-
-  <div class="skills-two-cols">
-    <!-- Colonne 1 -->
-    <div class="skill-card">
-      <h3>Apprentissages Critiques</h3>
-      <ul>
-        <li>AC24.01DevCloud | Proposer une solution Cloud adaptée à l’entreprise</li>
-        <li>AC24.02DevCloud | Virtualiser un environnement</li>
-        <li>AC24.03DevCloud | Utiliser les services du Cloud</li>
-        <li>AC24.04DevCloud | Analyser un service Cloud au travers des métriques</li>
-      </ul>
-    </div>
-
-    <!-- Colonne 2 -->
-    <div class="skill-card">
-      <h3>Composantes Essentielles</h3>
-      <ul>
-        <li>CE4.01 | en respectant un cahier des charges</li>
-        <li>CE4.02 | en documentant le travail réalisé</li>
-        <li>CE4.03 | en intégrant les problématiques de sécurité</li>
-        <li>CE4.04 | en assurant une veille technologique</li>
-        <li>CE4.05 | en respectant les pratiques d’équipes et des méthodes de production</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 5 ème UE DevCloud-->
-<section id="competences" class="section section--skills">
-  <h2 class="section__title">UE X.5 (Développer) - Accompagner le développement d'applications</h2>
-
-  <div class="skills-two-cols">
-    <!-- Colonne 1 -->
-    <div class="skill-card">
-      <h3>Apprentissages Critiques</h3>
-      <ul>
-        <li>AC25.01DevCloud | Développer un microservice</li>
-        <li>AC25.02DevCloud | Mettre en production une application</li>
-        <li>AC25.03DevCloud | Programmer son réseau par le code </li>
-      </ul>
-    </div>
-
-    <!-- Colonne 2 -->
-    <div class="skill-card">
-      <h3>Composantes Essentielles</h3>
-      <ul>
-        <li>CE5.01 | en respectant un cahier des charges</li>
-        <li>CE5.02 | en documentant le travail réalisé</li>
-        <li>CE5.03 | en respectant les bonnes pratiques de développement et de production</li>
-        <li>CE5.04 | en visant l’amélioration continue</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-
-
-
 
 
   <!-- Section Projets 2ème année-->
-  <section id="projets" class="section section--projects">
-    <h2 class="section__title">Mes Projets de BUT 2</h2>
-    <div class="skills-grid">
-      <a href="SAE3.01.html" class="skill-card card-link">
-        <h3>SAE 3.01</h3>
-        <p>Projet prise wifi conncetée</p>
+  <section id="projets-but2" class="section section--projects-but2">
+    <h2 class="section__title">Mes Projets de <strong>BUT 2</strong></h2>
+    <div class="projects-container">
+      <a href="SAE3.01.html" class="project-card card-link" data-level="3.01">
+        <div class="project-header">
+          <div class="project-icon">🔌</div>
+          <div class="project-number">SAE 3.01</div>
+        </div>
+        <div class="project-content">
+          <h3>Prise WiFi Connectée</h3>
+          <p>Conception et développement d'une prise intelligente avec interface web et contrôle à distance</p>
+          <div class="project-tags">
+            <span>IoT</span>
+            <span>WiFi</span>
+          </div>
+        </div>
       </a>
-      <a href="SAE3.02.html" class="skill-card card-link">
-        <h3>SAE 3.02</h3>
-        <p>Développement d'un cluster de données</p>
+      
+      <a href="SAE3.02.html" class="project-card card-link" data-level="3.02">
+        <div class="project-header">
+          <div class="project-icon">🗄️</div>
+          <div class="project-number">SAE 3.02</div>
+        </div>
+        <div class="project-content">
+          <h3>Cluster de Données</h3>
+          <p>Développement et déploiement d'un cluster pour le traitement distribué de données</p>
+          <div class="project-tags">
+            <span>Big Data</span>
+            <span>Cluster</span>
+          </div>
+        </div>
       </a>
-      <a href="SAE3.03.html" class="skill-card card-link">
-        <h3>SAE 3.03</h3>
-        <p>Déploiment d'un réseau Multisite</p>
+      
+      <a href="SAE3.03.html" class="project-card card-link" data-level="3.03">
+        <div class="project-header">
+          <div class="project-icon">🌐</div>
+          <div class="project-number">SAE 3.03</div>
+        </div>
+        <div class="project-content">
+          <h3>Réseau Multisite</h3>
+          <p>Déploiement d'une infrastructure réseau connectant plusieurs sites distants</p>
+          <div class="project-tags">
+            <span>Réseau</span>
+            <span>VPN</span>
+          </div>
+        </div>
       </a>
-      <a href="SAE3.04.html" class="skill-card card-link">
-        <h3>SAE 3.04</h3>
-        <p>Mettre en place une infrastructure virtualisée</p>
+      
+      <a href="SAE3.04.html" class="project-card card-link" data-level="3.04">
+        <div class="project-header">
+          <div class="project-icon">☁️</div>
+          <div class="project-number">SAE 3.04</div>
+        </div>
+        <div class="project-content">
+          <h3>Infrastructure Virtualisée</h3>
+          <p>Mise en place d'une infrastructure complète basée sur la virtualisation</p>
+          <div class="project-tags">
+            <span>Cloud</span>
+            <span>VM</span>
+          </div>
+        </div>
       </a>
     </div>
   </section>
         <!-- Section Projets 1ère année-->
-  <section id="projets" class="section section--projects">
-    <h2 class="section__title">Mes Projets de BUT 1</h2>
-    <div class="skills-grid">
-      <a href="SAE1.01.html" class="skill-card card-link">
-        <h3>SAE 1.01</h3>
-        <p>Découverte de l'ANSSI</p>
+  <section id="projets-but1" class="section section--projects-but1">
+    <h2 class="section__title">Mes Projets de <strong>BUT 1</strong></h2>
+    <div class="projects-container">
+      <a href="SAE1.01.html" class="project-card card-link" data-level="1.01">
+        <div class="project-header">
+          <div class="project-icon">🔒</div>
+          <div class="project-number">SAE 1.01</div>
+        </div>
+        <div class="project-content">
+          <h3>Découverte de l'ANSSI</h3>
+          <p>Exploration des missions et du rôle de l'Agence Nationale de la Sécurité des Systèmes d'Information</p>
+          <div class="project-tags">
+            <span>Sécurité</span>
+            <span>ANSSI</span>
+          </div>
+        </div>
       </a>
-      <a href="SAE1.03.html" class="skill-card card-link">
-        <h3>SAE 1.03</h3>
-        <p>Découvrir un dispositif de transmission</p>
+      
+      <a href="SAE1.03.html" class="project-card card-link" data-level="1.03">
+        <div class="project-header">
+          <div class="project-icon">📡</div>
+          <div class="project-number">SAE 1.03</div>
+        </div>
+        <div class="project-content">
+          <h3>Dispositif de Transmission</h3>
+          <p>Découverte et analyse des différents dispositifs de transmission de données</p>
+          <div class="project-tags">
+            <span>Transmission</span>
+            <span>Signaux</span>
+          </div>
+        </div>
       </a>
-      <a href="SAE1.05.html" class="skill-card card-link">
-        <h3>SAE 1.05</h3>
-        <p>Découverte automatique d'hôtes</p>
+      
+      <a href="SAE1.05.html" class="project-card card-link" data-level="1.05">
+        <div class="project-header">
+          <div class="project-icon">🔍</div>
+          <div class="project-number">SAE 1.05</div>
+        </div>
+        <div class="project-content">
+          <h3>Découverte Automatique d'Hôtes</h3>
+          <p>Développement d'outils pour la découverte automatique d'équipements sur un réseau</p>
+          <div class="project-tags">
+            <span>Réseau</span>
+            <span>Scan</span>
+          </div>
+        </div>
       </a>
     </div>
   </section>
 
 
-
-
-<section id="competences" class="section section--skills">
-  <h2 class="section__title">Portfolio de 1ère année</h2>
-  <!-- c’est ce wrapper qui autorise le grid/flex pour distribuer les cartes -->
-  <div class="cards cards--skills">
-    <a href="https://e-portfolio.uha.fr/view/view.php?t=1ff0c59b94dcf28fbbc5"
-       class="skill-card card-link">
-      <h3 class="skill-card__title">Portfolio BUT 1</h3>
-    </a>
-    <!-- vous pouvez ajouter plusieurs <a class="skill-card"> ici -->
-  </div>
-</section>
 
 
   <!-- Footer -->
@@ -266,29 +397,29 @@
     <p>&copy; 2025 - Julien Koerber</p>
   </footer>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollContainer = document.querySelector('#competences .scroll-container');
-    const cards = scrollContainer.querySelectorAll('.skill-card');
-    let currentIndex = 0;
+// Fonction pour gérer les onglets rétractables
+function toggleTab(tabId) {
+  const content = document.getElementById('content-' + tabId);
+  const icon = document.getElementById('icon-' + tabId);
+  
+  if (content.classList.contains('active')) {
+    // Fermer l'onglet
+    content.classList.remove('active');
+    icon.classList.remove('active');
+    icon.textContent = '+';
+  } else {
+    // Ouvrir l'onglet
+    content.classList.add('active');
+    icon.classList.add('active');
+    icon.textContent = '−';
+  }
+}
 
-    const scrollToCard = (index) => {
-      if (index < 0 || index >= cards.length) return;
-      cards[index].scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest' // <-- empêche la page de remonter
-      });
-      currentIndex = index;
-    };
-
-    document.querySelector('#competences .scroll-btn.left').addEventListener('click', () => {
-      scrollToCard(currentIndex - 1);
-    });
-
-    document.querySelector('#competences .scroll-btn.right').addEventListener('click', () => {
-      scrollToCard(currentIndex + 1);
-    });
-  });
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+  // Tous les onglets sont fermés par défaut
+  console.log('Onglets rétractables initialisés');
+});
 </script>
 
 
