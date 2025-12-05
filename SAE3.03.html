@@ -1,77 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 3.03 - Architecture Réseau LAN Multi-Sites</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
 <div class="return-button">
   <a href="index.html">← Retour à l'accueil</a>
 </div>
 
 <section class="section">
-  <link rel="stylesheet" href="styles.css">
-  <h1 class="page-main-title">SAE 3.03 – Architecture Réseau LAN Multi-Sites</h1>
+  <h1 class="page-main-title">SAE 3.03 - Architecture Réseau LAN Multi-Sites</h1>
 
   <div class="project-content">
 
-    <!-- Bloc 1 : Objectif -->
+    <!-- Bloc : Contexte du projet -->
     <div class="text-block">
-      <h2>Objectif du Projet</h2>
+      <h2>📋 Contexte du projet</h2>
       <p>
-        Le projet consiste à concevoir l’<strong>architecture réseau LAN</strong> de deux entreprises 
-        (UC Exchange et ABC Conseil) réparties sur plusieurs sites (Strasbourg, Nancy, Metz). 
-        Chaque site dispose d’un réseau local structuré en architecture <strong>commutée hiérarchique</strong>, 
-        avec des <strong>liens redondants</strong> entre les commutateurs pour assurer la 
-        <strong>tolérance aux pannes</strong>.
+        Conception de l'<strong>architecture réseau LAN complète</strong> de deux entreprises 
+        (UC Exchange et ABC Conseil) réparties sur plusieurs sites géographiques (Strasbourg, Nancy, Metz).
+      </p>
+      <p>
+        Chaque site dispose d'un réseau local structuré en <strong>architecture commutée hiérarchique</strong> 
+        avec liens redondants entre commutateurs pour garantir la <strong>haute disponibilité</strong> 
+        et la tolérance aux pannes.
       </p>
     </div>
 
-    <!-- Bloc 2 : Exigences -->
+    <!-- Bloc : Exigences techniques -->
     <div class="text-block">
-      <h2>Exigences Techniques</h2>
+      <h2>🔧 Exigences techniques</h2>
       <ul>
-        <li>Mise en place du protocole <strong>MST (Multiple Spanning Tree)</strong> pour éviter les boucles et garantir la redondance.</li>
-        <li>Création de <strong>VLANs</strong> par service selon le plan d’adressage IP fourni.</li>
-        <li>Activation du <strong>routage inter-VLAN</strong> sur les équipements de niveau 3.</li>
-        <li>Configuration du <strong>PAT (Port Address Translation)</strong> pour l'accès à l’extérieur.</li>
-        <li>Implémentation de la <strong>haute disponibilité</strong> avec le protocole <strong>VRRP</strong>.</li>
-        <li>Attribution :
-          <ul>
-            <li><strong>statique</strong> des adresses IP pour les équipements réseau,</li>
-            <li><strong>dynamique</strong> via DHCP pour les machines clientes.</li>
-          </ul>
+        <li><strong>MST (Multiple Spanning Tree)</strong> - Prévention des boucles réseau et redondance des liens</li>
+        <li><strong>Segmentation VLAN</strong> - Création de réseaux virtuels par service selon le plan d'adressage</li>
+        <li><strong>Routage inter-VLAN</strong> - Activation sur équipements de niveau 3 (Layer 3 switches)</li>
+        <li><strong>PAT (Port Address Translation)</strong> - Masquerading pour l'accès Internet</li>
+        <li><strong>VRRP (Virtual Router Redundancy Protocol)</strong> - Haute disponibilité des passerelles</li>
+        <li><strong>DHCP</strong> - Attribution dynamique des adresses IP pour les postes clients</li>
+        <li><strong>Adressage statique</strong> - Configuration manuelle des équipements réseau</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Architecture déployée -->
+    <div class="text-block">
+      <h2>🏗️ Architecture déployée</h2>
+      <ul>
+        <li><strong>Modèle hiérarchique 3 couches</strong> - Core, Distribution, Access</li>
+        <li><strong>Redondance des liens</strong> - Double connexion entre switches pour la tolérance aux pannes</li>
+        <li><strong>Services centralisés</strong> - DNS, DHCP, Active Directory</li>
+        <li><strong>Interconnexion WAN</strong> - Liaison inter-sites via réseau opérateur</li>
+        <li><strong>Sécurisation</strong> - Firewalls, ACLs, segmentation par VLAN</li>
+        <li><strong>Simulation GNS3</strong> - Validation complète avant déploiement</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--clr-text-dark);">
+        Ce projet a permis de développer et valider les compétences suivantes du référentiel BUT R&T :
+      </p>
+      <ul>
+        <li>
+          <strong>AC21.01</strong> - Configurer et dépanner le routage dynamique dans un réseau 
+          (routage inter-sites et inter-VLAN)
+        </li>
+        <li>
+          <strong>AC21.02</strong> - Configurer et expliquer une politique simple de QoS et les fonctions 
+          de base de la sécurité d'un réseau (VLANs, segmentation, ACLs)
+        </li>
+        <li>
+          <strong>AC21.03</strong> - Déployer des postes clients et des solutions virtualisées adaptées 
+          à une situation donnée (DNS, DHCP, Active Directory)
+        </li>
+        <li>
+          <strong>AC21.04</strong> - Déployer des services réseaux avancés 
+          (haute disponibilité avec VRRP, redondance serveurs, centralisation)
+        </li>
+        <li>
+          <strong>AC21.05</strong> - Identifier les réseaux opérateurs et l'architecture d'Internet 
+          (infrastructure multi-sites sur WAN)
+        </li>
+        <li>
+          <strong>AC21.06</strong> - Travailler en équipe pour développer ses compétences professionnelles 
+          (coordination en équipe de 3, documentation complète)
         </li>
       </ul>
     </div>
 
-    <!-- Bloc 3 : Compétences -->
+    <!-- Bloc : Compétences transversales -->
     <div class="text-block">
-      <h2>Compétences Acquises</h2>
-      <p>
-        Ce projet m’a permis de développer des compétences solides en <strong>conception d’architectures réseau LAN</strong> multi-sites, 
-        en <strong>configuration avancée des équipements réseau</strong> (VLAN, routage, redondance, NAT) 
-        ainsi qu’en <strong>sécurisation et optimisation</strong> des infrastructures informatiques.
-      </p>
-      <p>
-        J’ai acquis une maîtrise concrète des protocoles comme <strong>MST</strong> et <strong>VRRP</strong>, 
-        et j’ai renforcé mes compétences en <strong>planification réseau</strong>, 
-        <strong>gestion d’adressage IP</strong> et <strong>haute disponibilité</strong>.
-      </p>
-    </div>
-
-    <!-- Bloc 4 : Téléchargements -->
-    <div class="text-block">
-      <h2>Téléchargements</h2>
+      <h2>💡 Compétences transversales développées</h2>
       <ul>
-        <li><a href="Preuves_303/Rapport partie LAN.docx" download class="download-link">📄 Rapport partie LAN (Docx)</a></li>
-        <li><a href="Preuves_303/SAE303Julien.gns3" download class="download-link">💻 Projet GNS3 (GNS3)</a></li>
-        <li><a href="Preuves_303/LAN-Final.zip" download class="download-link">💽 LAN Final (ZIP)</a></li>
+        <li><strong>Architecture réseau d'entreprise</strong> - Conception hiérarchique et scalable</li>
+        <li><strong>Protocoles avancés</strong> - MST, VRRP, routage dynamique (OSPF/EIGRP)</li>
+        <li><strong>Haute disponibilité</strong> - Redondance, failover, load balancing</li>
+        <li><strong>Planification d'adressage</strong> - VLSM, subnetting, documentation réseau</li>
+        <li><strong>Simulation réseau</strong> - Maîtrise de GNS3 pour validation d'architecture</li>
+        <li><strong>Travail en équipe</strong> - Coordination de 3 personnes, répartition des tâches</li>
       </ul>
     </div>
-  </div>
-  </section>
 
-<div class="text-block">
-  <h3>Conclusion</h3>
-  <p>
-    Mes compétences en administration réseau ont été validées par la SAE 3.03 : Avec mon équipe, nous avons initialement configuré et résolu les problèmes de routage dynamique entre différents sites (AC21.01), puis mis en place la sécurité fondamentale et la segmentation du trafic grâce au VLAN (AC21.02). Nous avons ensuite mis en place des services virtuels—DNS, DHCP et Active Directory—qui répondent aux exigences des entreprises fictives (AC21.03), avant d'incorporer des systèmes de haute disponibilité, de redondance des serveurs et de centralisation des ressources afin d'offrir des services plus sophistiqués (AC21.04). Simultanément, nous avons élaboré une infrastructure multi-sites en considérant les limitations du WAN et l'architecture de l'Internet sur un réseau d'opérateur (AC21.05). Le travail en équipe de trois nous a permis de répartir les tâches de manière efficiente et de produire une documentation exhaustive et bien structurée (AC21.06).
-  </p>  
-    </div>  
+    <!-- Bloc : Ressources -->
+    <div class="text-block">
+      <h2>📥 Ressources du projet</h2>
+      <ul>
+        <li><a href="Preuves_303/Rapport partie LAN.docx" download class="download-link">📄 Rapport partie LAN (DOCX)</a></li>
+        <li><a href="Preuves_303/SAE303Julien.gns3" download class="download-link">💻 Projet GNS3 (GNS3)</a></li>
+        <li><a href="Preuves_303/LAN-Final.zip" download class="download-link">💾 Configuration LAN complète (ZIP)</a></li>
+      </ul>
+    </div>
+
+  </div>
 
   <div class="image-container">
-  <img src="Images/GNS3.png" alt="Schéma ou illustration du projet" class="project-image" />
-</div>
+    <img src="Images/GNS3.png" alt="Topologie réseau multi-sites dans GNS3" class="project-image" />
+  </div>
+</section>
+
+</body>
+</html>

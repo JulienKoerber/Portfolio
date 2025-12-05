@@ -1,64 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 3.04 - Infrastructure virtualisée Cloud</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
 <div class="return-button">
   <a href="index.html">← Retour à l'accueil</a>
 </div>
 
 <section class="section">
-  <link rel="stylesheet" href="styles.css">
-  <h1 class="page-main-title">SAE 3.04 – Mettre en place une infrastructure virtualisée</h1> <br>
+  <h1 class="page-main-title">SAE 3.04 - Mettre en place une infrastructure virtualisée</h1>
 
   <div class="project-content">
 
-    <!-- Bloc 1 : Objectif -->
+    <!-- Bloc : Contexte du projet -->
     <div class="text-block">
-      <h2>Objectif du Projet</h2>
+      <h2>📋 Contexte du projet</h2>
       <p>
-        <ul>
-        <li>Mettre en place un site E-Commerce pour la vente en ligne - prestashop (https://www.prestashop.com/)</li>
-        <li>Mettre en place un site de gestion administrative pour la comptabilité ( System configuration — Odoo 16.0 documentation)</li>
-        Le projet consiste à déployer une boutique en ligne sous PrestaShop et un portail administratif avec Odoo 16, hébergés sur une infrastructure cloud OVH modulaire et évolutive. Trois pics de trafic (Noël, Pâques, Saint-Valentin) nécessitent une disponibilité renforcée dès J-21 et un RPO de 1 h. La solution s’appuie sur un load-balancer, un vRack isolé et des IP statiques, avec snapshots et restauration point-in-time pour la sauvegarde. La supervision 24/7 et les ajustements dynamiques garantissent la résilience en période de rush. Les mises à jour sont d’abord testées en staging puis déployées hors pics.
-        </ul> 
+        Déploiement d'une <strong>infrastructure cloud complète sur OVH Public Cloud</strong> hébergeant 
+        une boutique en ligne PrestaShop et un portail administratif Odoo 16.
+      </p>
+      <p>
+        Le projet répond à des exigences strictes de <strong>haute disponibilité (SLA ≥ 99,9%)</strong> 
+        et de <strong>résilience</strong> avec gestion automatique de 3 pics de trafic annuels 
+        (Noël, Pâques, Saint-Valentin) nécessitant un scaling dynamique dès J-21.
       </p>
     </div>
 
-    <!-- Bloc 2 : Exigences -->
+    <!-- Bloc : Architecture Cloud -->
     <div class="text-block">
-      <h2>Exigences Techniques</h2>
+      <h2>☁️ Architecture Cloud OVH</h2>
       <ul>
-        <li>Environnements : Prod (PrestaShop + Odoo16, SLA ≥ 99,9 %, RPO ≤ 1 h), Staging, Dev</li>
-        <li>OVH Cloud Public :</li>
-        <li>2× Web/App PrestaShop (4 vCore, 8 Go RAM, SSD 100 Go)</li>
-        <li>2× App Odoo 16 (4 vCore, 8 Go RAM, SSD 100 Go)</li>
-        <li>MariaDB Galera 3-nœuds (4 vCore, 16 Go RAM)</li>
-        <li>PostgreSQL master+standby (4 vCore, 16 Go RAM)</li>
-        <li>OS : Ubuntu 22.04 LTS</li>
+        <li><strong>Environnements</strong> - Production, Staging, Développement</li>
+        <li><strong>Web/App PrestaShop</strong> - 2× instances (4 vCore, 8 Go RAM, SSD 100 Go)</li>
+        <li><strong>App Odoo 16</strong> - 2× instances (4 vCore, 8 Go RAM, SSD 100 Go)</li>
+        <li><strong>Base de données</strong> - MariaDB Galera 3 nœuds (4 vCore, 16 Go RAM)</li>
+        <li><strong>PostgreSQL</strong> - Master + Standby (4 vCore, 16 Go RAM)</li>
+        <li><strong>OS</strong> - Ubuntu 22.04 LTS</li>
+        <li><strong>Réseau</strong> - vRack isolé, IP statiques, Load Balancer OVH</li>
       </ul>
     </div>
 
-    <!-- Bloc 3 : Compétences -->
+    <!-- Bloc : Fonctionnalités avancées -->
     <div class="text-block">
-      <h2>Compétences Acquises</h2>
-      <li>Analyse des besoins fonctionnels et techniques pour un site e-commerce (PrestaShop) et un ERP (Odoo)</li>
-      <li>Rédaction du cahier des charges et des spécifications d’architecture cloud (OVH Public Cloud, vRack, IP statiques)</li>
-      <li>Conception d’une topologie réseau sécurisée (load-balancer, firewall OVH, isolation via vRack)</li>
-      <li>Élaboration d’une stratégie de haute disponibilité et de montée en charge (Galera, réplication PostgreSQL, auto-scaling, health-checks)</li>
-      <li>Préparation d’un plan de supervision et d’alerting 24/7 (métriques, logs centralisés, Grafana Alertmanager)</li>
-    </div>
-
-    <!-- Bloc 4 : Téléchargements -->
-    <div class="text-block">
-      <h2>Téléchargements</h2>
+      <h2>🚀 Fonctionnalités et services</h2>
       <ul>
-        <li><a href="Preuves_304/Rapport_SAE_3.04_Julien_Koerber.pdf" download class="download-link">📄 Rapport Projet (pdf)</a></li>
+        <li><strong>Load Balancing</strong> - Répartition automatique du trafic entre serveurs web</li>
+        <li><strong>Haute disponibilité</strong> - Réplication Galera et PostgreSQL avec failover automatique</li>
+        <li><strong>Auto-scaling</strong> - Ajustement dynamique des ressources selon la charge</li>
+        <li><strong>Sauvegarde automatique</strong> - Snapshots et restauration point-in-time (RPO ≤ 1h)</li>
+        <li><strong>Supervision 24/7</strong> - Monitoring Grafana, alerting Alertmanager</li>
+        <li><strong>Sécurité</strong> - Firewall OVH, isolation vRack, SSL/TLS</li>
+        <li><strong>CI/CD</strong> - Tests en staging avant déploiement en production</li>
       </ul>
     </div>
-  </div> <br> <br>
-  <div class="text-block">
-  <h3>Conclusion</h3>
-  <p>
-    Grâce à ce projet de déploiement d’une infrastructure virtualisée sur OVH Cloud, j’ai mis en œuvre et consolidé chacun des savoir-faire attendus par les apprentissages critiques et les composantes essentielles du module « Orchestrer ». J’ai élaboré un cahier des charges précis (CE4.01) pour répondre aux exigences de SLA ≥ 99,9 % et RPO ≤ 1 h, avant de penser à la virtualisation de l'environnement Ubuntu (AC24.02) et de configurer le vRack, les IP statiques et le load-balancer (AC24.01). Le suivi continu des métriques de performance et la mise en place d’alertes et de routines d’auto-scaling font référence à l'AC24.04, tout en documentant chaque étape (CE4.02), en intégrant les bonnes pratiques de sécurité (firewall OVH, isolation vRack) (CE4.03). Enfin, j’ai appliqué des méthodes de production rigoureuses — tests en staging et déploiements hors pics, procédures de sauvegarde avant mise à jour (CE4.05) — garantissant ainsi une infrastructure modulaire, résiliente et parfaitement alignée sur les besoins de l’entreprise.
-  </p>  
-  </div> 
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--clr-text-dark);">
+        Ce projet a permis de développer et valider les compétences suivantes du référentiel BUT R&T DevCloud :
+      </p>
+      <ul>
+        <li>
+          <strong>AC24.01DevCloud</strong> - Proposer une solution Cloud adaptée à l'entreprise 
+          (analyse des besoins, choix OVH Public Cloud, dimensionnement des ressources pour SLA ≥ 99,9%)
+        </li>
+        <li>
+          <strong>AC24.02DevCloud</strong> - Virtualiser un environnement 
+          (déploiement d'instances Ubuntu 22.04 LTS, configuration des VMs PrestaShop et Odoo)
+        </li>
+        <li>
+          <strong>AC24.03DevCloud</strong> - Utiliser les services du Cloud 
+          (vRack, IP statiques, load-balancer OVH, snapshots, réplication des données)
+        </li>
+        <li>
+          <strong>AC24.04DevCloud</strong> - Analyser un service Cloud au travers des métriques 
+          (monitoring 24/7 avec Grafana, métriques CPU/RAM, alerting Alertmanager, auto-scaling)
+        </li>
+        <li>
+          <strong>AC25.02DevCloud</strong> - Mettre en production une application 
+          (déploiement PrestaShop et Odoo 16 avec environnements Prod/Staging/Dev, CI/CD)
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Compétences transversales -->
+    <div class="text-block">
+      <h2>💡 Compétences transversales développées</h2>
+      <ul>
+        <li><strong>Cloud Computing</strong> - Maîtrise de l'infrastructure OVH Public Cloud</li>
+        <li><strong>Virtualisation</strong> - Gestion d'instances, snapshots, images personnalisées</li>
+        <li><strong>DevOps</strong> - CI/CD, tests staging, déploiements automatisés</li>
+        <li><strong>Haute disponibilité</strong> - Réplication, clustering, load balancing</li>
+        <li><strong>Monitoring & Alerting</strong> - Grafana, Prometheus, logs centralisés</li>
+        <li><strong>Sécurité Cloud</strong> - Firewall, isolation réseau, gestion des accès</li>
+        <li><strong>Cahier des charges</strong> - Analyse de besoins, spécifications techniques, SLA</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Gestion des pics de trafic -->
+    <div class="text-block">
+      <h2>📈 Gestion des pics de trafic</h2>
+      <p>
+        Le système intègre une <strong>stratégie de scaling proactif</strong> pour les 3 événements annuels :
+      </p>
+      <ul>
+        <li><strong>J-21</strong> - Démarrage du renforcement de capacité (scale-up progressif)</li>
+        <li><strong>Auto-scaling</strong> - Ajout automatique d'instances selon métriques CPU/RAM</li>
+        <li><strong>Health checks</strong> - Surveillance continue avec remplacement automatique des nœuds défaillants</li>
+        <li><strong>Sauvegarde avant pic</strong> - Snapshots complets pour rollback rapide si besoin</li>
+        <li><strong>Tests de charge</strong> - Validation en staging avec simulation de trafic réel</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Ressources -->
+    <div class="text-block">
+      <h2>📥 Ressources du projet</h2>
+      <ul>
+        <li><a href="Preuves_304/Rapport_SAE_3.04_Julien_Koerber.pdf" download class="download-link">📄 Rapport complet du projet (PDF)</a></li>
+      </ul>
+    </div>
+
+  </div>
+
   <div class="image-container">
-  <img src="Images/Logo_OVH.png" class="project-image" />
-</div>
+    <img src="Images/Logo_OVH.png" alt="Infrastructure cloud déployée sur OVH Public Cloud" class="project-image" />
+  </div>
 </section>
+
+</body>
+</html>

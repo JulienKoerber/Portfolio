@@ -1,0 +1,64 @@
+<div class="return-button">
+  <a href="index.html">← Retour à l'accueil</a>
+</div>
+
+<section class="section">
+  <link rel="stylesheet" href="styles.css">
+  <h1 class="page-main-title">SAE 3.04 – Mettre en place une infrastructure virtualisée</h1> <br>
+
+  <div class="project-content">
+
+    <!-- Bloc 1 : Objectif -->
+    <div class="text-block">
+      <h2>Objectif du Projet</h2>
+      <p>
+        <ul>
+        <li>Mettre en place un site E-Commerce pour la vente en ligne - prestashop (https://www.prestashop.com/)</li>
+        <li>Mettre en place un site de gestion administrative pour la comptabilité ( System configuration — Odoo 16.0 documentation)</li>
+        Le projet consiste à déployer une boutique en ligne sous PrestaShop et un portail administratif avec Odoo 16, hébergés sur une infrastructure cloud OVH modulaire et évolutive. Trois pics de trafic (Noël, Pâques, Saint-Valentin) nécessitent une disponibilité renforcée dès J-21 et un RPO de 1 h. La solution s’appuie sur un load-balancer, un vRack isolé et des IP statiques, avec snapshots et restauration point-in-time pour la sauvegarde. La supervision 24/7 et les ajustements dynamiques garantissent la résilience en période de rush. Les mises à jour sont d’abord testées en staging puis déployées hors pics.
+        </ul> 
+      </p>
+    </div>
+
+    <!-- Bloc 2 : Exigences -->
+    <div class="text-block">
+      <h2>Exigences Techniques</h2>
+      <ul>
+        <li>Environnements : Prod (PrestaShop + Odoo16, SLA ≥ 99,9 %, RPO ≤ 1 h), Staging, Dev</li>
+        <li>OVH Cloud Public :</li>
+        <li>2× Web/App PrestaShop (4 vCore, 8 Go RAM, SSD 100 Go)</li>
+        <li>2× App Odoo 16 (4 vCore, 8 Go RAM, SSD 100 Go)</li>
+        <li>MariaDB Galera 3-nœuds (4 vCore, 16 Go RAM)</li>
+        <li>PostgreSQL master+standby (4 vCore, 16 Go RAM)</li>
+        <li>OS : Ubuntu 22.04 LTS</li>
+      </ul>
+    </div>
+
+    <!-- Bloc 3 : Compétences -->
+    <div class="text-block">
+      <h2>Compétences Acquises</h2>
+      <li>Analyse des besoins fonctionnels et techniques pour un site e-commerce (PrestaShop) et un ERP (Odoo)</li>
+      <li>Rédaction du cahier des charges et des spécifications d’architecture cloud (OVH Public Cloud, vRack, IP statiques)</li>
+      <li>Conception d’une topologie réseau sécurisée (load-balancer, firewall OVH, isolation via vRack)</li>
+      <li>Élaboration d’une stratégie de haute disponibilité et de montée en charge (Galera, réplication PostgreSQL, auto-scaling, health-checks)</li>
+      <li>Préparation d’un plan de supervision et d’alerting 24/7 (métriques, logs centralisés, Grafana Alertmanager)</li>
+    </div>
+
+    <!-- Bloc 4 : Téléchargements -->
+    <div class="text-block">
+      <h2>Téléchargements</h2>
+      <ul>
+        <li><a href="Preuves_304/Rapport_SAE_3.04_Julien_Koerber.pdf" download class="download-link">📄 Rapport Projet (pdf)</a></li>
+      </ul>
+    </div>
+  </div> <br> <br>
+  <div class="text-block">
+  <h3>Conclusion</h3>
+  <p>
+    Grâce à ce projet de déploiement d’une infrastructure virtualisée sur OVH Cloud, j’ai mis en œuvre et consolidé chacun des savoir-faire attendus par les apprentissages critiques et les composantes essentielles du module « Orchestrer ». J’ai élaboré un cahier des charges précis (CE4.01) pour répondre aux exigences de SLA ≥ 99,9 % et RPO ≤ 1 h, avant de penser à la virtualisation de l'environnement Ubuntu (AC24.02) et de configurer le vRack, les IP statiques et le load-balancer (AC24.01). Le suivi continu des métriques de performance et la mise en place d’alertes et de routines d’auto-scaling font référence à l'AC24.04, tout en documentant chaque étape (CE4.02), en intégrant les bonnes pratiques de sécurité (firewall OVH, isolation vRack) (CE4.03). Enfin, j’ai appliqué des méthodes de production rigoureuses — tests en staging et déploiements hors pics, procédures de sauvegarde avant mise à jour (CE4.05) — garantissant ainsi une infrastructure modulaire, résiliente et parfaitement alignée sur les besoins de l’entreprise.
+  </p>  
+  </div> 
+  <div class="image-container">
+  <img src="Images/Logo_OVH.png" class="project-image" />
+</div>
+</section>
