@@ -83,7 +83,7 @@ body {
 /* Partie gauche - Photo et nom */
 .intro__left {
   display: flex;
-  flex-direction: column;
+  flex-direction: column  ;
   align-items: center;
   text-align: center;
 }
@@ -241,11 +241,11 @@ body {
 
 /* Section Compétences par UE */
 .section--skills {
-  background: linear-gradient(135deg, #f0f4ff, #e1eaff);
+  /* background: linear-gradient(135deg, #f0f4ff, #e1eaff); */
   position: relative;
 }
 
-.section--skills::before {
+/* .section--skills::before {
   content: '';
   position: absolute;
   top: 0;
@@ -254,10 +254,10 @@ body {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="skills-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="8" fill="none" stroke="%232c3e50" stroke-width="0.5" opacity="0.1"/><circle cx="15" cy="15" r="3" fill="%232c3e50" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23skills-pattern)"/></svg>');
   pointer-events: none;
-}
+} */
 
 .section--skills2 {
-  background-color: rgb(162, 162, 253);
+  /* background-color: rgb(162, 162, 253); */
 }
 .section__title {
   text-align: center;
@@ -739,12 +739,12 @@ body {
 
 /* Section Portfolio et Stage côte à côte */
 .section--portfolio-stage {
-  background: linear-gradient(135deg, #f8faff, #e8f0ff);
+  /* background: linear-gradient(135deg, #f8faff, #e8f0ff); */
   position: relative;
   padding: 4rem 0;
 }
 
-.section--portfolio-stage::before {
+/* .section--portfolio-stage::before {
   content: '';
   position: absolute;
   top: 0;
@@ -754,7 +754,7 @@ body {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid-combined" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e0e8ff" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid-combined)"/></svg>');
   opacity: 0.3;
   pointer-events: none;
-}
+} */
 
 .portfolio-stage-container {
   display: grid;
@@ -814,11 +814,11 @@ body {
 
 /* Section Portfolio 1ère année */
 .section--portfolio {
-  background: linear-gradient(135deg, #f8faff, #e8f0ff);
+  /* background: linear-gradient(135deg, #f8faff, #e8f0ff); */
   position: relative;
 }
 
-.section--portfolio::before {
+/* .section--portfolio::before {
   content: '';
   position: absolute;
   top: 0;
@@ -828,7 +828,7 @@ body {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e0e8ff" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
   opacity: 0.3;
   pointer-events: none;
-}
+} */
 
 .portfolio-container {
   display: flex;
@@ -902,11 +902,11 @@ body {
 
 /* Section Stage */
 .section--stage {
-  background: linear-gradient(135deg, #fff8f0, #fff2e8);
+  /* background: linear-gradient(135deg, #fff8f0, #fff2e8); */
   position: relative;
 }
 
-.section--stage::before {
+/* .section--stage::before {
   content: '';
   position: absolute;
   top: 0;
@@ -915,7 +915,7 @@ body {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ff5a5f" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
   pointer-events: none;
-}
+} */
 
 .stage-container {
   display: flex;
@@ -1055,11 +1055,11 @@ body {
 
 /* Section Projets BUT 2 */
 .section--projects-but2 {
-  background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+  /* background: linear-gradient(135deg, #f0f8ff, #e6f3ff); */
   position: relative;
 }
 
-.section--projects-but2::before {
+/* .section--projects-but2::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1068,15 +1068,15 @@ body {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hexagon" width="28" height="24" patternUnits="userSpaceOnUse"><path d="M14,2 L24,8 L24,16 L14,22 L4,16 L4,8 Z" fill="none" stroke="%232a3eb1" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23hexagon)"/></svg>');
   pointer-events: none;
-}
+} */
 
 /* Section Projets BUT 1 */
 .section--projects-but1 {
-  background: linear-gradient(135deg, #fff5f0, #ffe8e0);
+  /* background: linear-gradient(135deg, #fff5f0, #ffe8e0); */
   position: relative;
 }
 
-.section--projects-but1::before {
+/* .section--projects-but1::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1085,7 +1085,7 @@ body {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="triangles" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,2 L18,16 L2,16 Z" fill="none" stroke="%23ff5a5f" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23triangles)"/></svg>');
   pointer-events: none;
-}
+} */
 
 /* Container des projets */
 .projects-container {
