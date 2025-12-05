@@ -1,52 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 1.05 - Découverte Automatique d'Hôtes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
 <div class="return-button">
   <a href="index.html">← Retour à l'accueil</a>
 </div>
 
 <section class="section">
-  <link rel="stylesheet" href="styles.css">
   <h1 class="page-main-title">SAE 1.05 - Découverte Automatique d'Hôtes</h1>
 
   <div class="project-content">
 
-    <!-- Bloc 1 : Objectif -->
+    <!-- Bloc : Contexte du projet -->
     <div class="text-block">
-      <h2>Objectif du Projet</h2>
-      <li>Comprendre et expérimenter les principes de l’attaque Man-In-The-Middle (MITM)</li>
-      <li>Développer un script Python MITM capable de se glisser entre émetteur et récepteur pour capturer un flux de données.</li>
+      <h2>📋 Contexte du projet</h2>
+      <p>
+        Développement d'un <strong>outil de sécurité offensive</strong> en binôme permettant de réaliser une attaque 
+        Man-In-The-Middle (MITM) pour comprendre les vulnérabilités des communications réseau non chiffrées.
+      </p>
+      <p>
+        Le projet combine programmation Python, manipulation de sockets réseau et découverte automatique d'hôtes 
+        pour intercepter et analyser le trafic entre deux machines.
+      </p>
     </div>
 
-    <!-- Bloc 2 : Fonctionnalités -->
+    <!-- Bloc : Réalisations techniques -->
     <div class="text-block">
-      <h2>Fonctionnalités Clés</h2>
-      <li>Script Python</li>
-      <p>- Établissement de deux sockets pour intercepter et relayer le trafic.</p>
-      <p>- Capture et journalisation du flux de données en temps réel.</p>
-      <li>Module de découverte automatique</li>
-      <p>- Scan réseau ICMP pour identifier dynamiquement les hôtes actifs.</p>
-      <p>- Génération d’une liste d’adresses IP ciblées pour l’attaque MITM.</p>
-      <li>Architecture en binome</li>
-    </div>
-
-    <!-- Bloc 3 : Compétences -->
-    <div class="text-block">
-      <h2>Compétences Acquises</h2>
-      <li>Programmation réseau en Python</li>
-      <li>Analyse de trafic</li>
-      <li>Sécurité offensive </li>
-      <li>Travail collaboratif</li>
-    </div>
-
-    <!-- Bloc 4 : Téléchargements -->
-    <div class="text-block">
-      <h2>Téléchargements</h2>
+      <h2>🔧 Réalisations techniques</h2>
       <ul>
-        <li><a href="Preuves_105/MITM.txt"download-link">🧾 Code MITM (txt)</a></li>
-        <li><a href="Preuves_105/scapy" download class="download-link">💻 Code Python (py)</a></li>
+        <li><strong>Script Python MITM</strong> - Interception et relais du trafic entre émetteur et récepteur</li>
+        <li><strong>Capture en temps réel</strong> - Journalisation et analyse du trafic intercepté</li>
+        <li><strong>Scan réseau ICMP</strong> - Module de découverte automatique des hôtes actifs via ping</li>
+        <li><strong>Bibliothèque Scapy</strong> - Manipulation de paquets réseau pour le scan et l'analyse</li>
+        <li><strong>Ciblage dynamique</strong> - Génération automatique d'une liste d'adresses IP potentielles</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--clr-text-dark);">
+        Ce projet a permis de développer et valider les compétences suivantes du référentiel BUT R&T :
+      </p>
+      <ul>
+        <li>
+          <strong>AC11.02</strong> - Comprendre l'architecture et les fondements des systèmes numériques, 
+          les principes du codage de l'information, des communications et de l'Internet
+        </li>
+        <li>
+          <strong>AC11.05</strong> - Identifier les dysfonctionnements du réseau local et savoir les signaler
+        </li>
+        <li>
+          <strong>AC13.01</strong> - Utiliser un système informatique et ses outils
+        </li>
+        <li>
+          <strong>AC13.02</strong> - Lire, exécuter, corriger et modifier un programme
+        </li>
+        <li>
+          <strong>AC13.03</strong> - Traduire un algorithme, dans un langage et pour un environnement donné
+        </li>
+        <li>
+          <strong>AC13.06</strong> - S'intégrer dans un environnement propice au développement et au travail collaboratif
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Compétences transversales -->
+    <div class="text-block">
+      <h2>💡 Compétences transversales développées</h2>
+      <ul>
+        <li><strong>Programmation réseau avancée</strong> - Maîtrise des sockets Python et des protocoles TCP/IP</li>
+        <li><strong>Sécurité offensive</strong> - Compréhension des attaques MITM et des vulnérabilités réseau</li>
+        <li><strong>Analyse de trafic</strong> - Capture, inspection et interprétation des flux de données</li>
+        <li><strong>Bibliothèques spécialisées</strong> - Utilisation de Scapy pour la manipulation de paquets</li>
+        <li><strong>Travail en binôme</strong> - Développement collaboratif et partage de connaissances</li>
+        <li><strong>Éthique de la cybersécurité</strong> - Compréhension des implications légales et morales des tests d'intrusion</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Ressources -->
+    <div class="text-block">
+      <h2>📥 Ressources du projet</h2>
+      <ul>
+        <li><a href="Preuves_105/MITM.txt" download class="download-link">📄 Code MITM (TXT)</a></li>
+        <li><a href="Preuves_105/scapy" download class="download-link">🐍 Module Scapy - Scan réseau (PY)</a></li>
       </ul>
     </div>
 
   </div>
-    <div class="image-container">
-    <img src="Images/MITM.png" alt="Schéma ou illustration du projet" class="project-image" />
+
+  <div class="image-container">
+    <img src="Images/MITM.png" alt="Schéma illustrant le principe d'une attaque Man-In-The-Middle" class="project-image" />
   </div>
 </section>
+
+</body>
+</html>
