@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 5.01 - Système de Géolocalisation Embarqué</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="return-button">
+  <a href="index.html">← Retour à l'accueil</a>
+</div>
+
+<section class="section">
+  <h1 class="page-main-title">SAE 5.01 - Géolocalisation IoT via LoRaWAN</h1>
+
+  <div class="project-content">
+
+    <!-- Bloc : Contexte du projet -->
+    <div class="text-block">
+      <h2>📋 Contexte du projet</h2>
+      <p>
+        Conception d'un <strong>système embarqué de géolocalisation de véhicule</strong> transmettant des données 
+        GNSS via <strong>LoRaWAN</strong> (The Things Network), avec optimisation de la consommation énergétique. 
+        Le système est autonome sur batterie, activé uniquement lors de détection de mouvement (accéléromètre), 
+        et permet le suivi en temps quasi-réel via interface web cartographique avec notifications SMS.
+      </p>
+    </div>
+
+    <!-- Bloc : Fonctionnalités -->
+    <div class="text-block">
+      <h2>🔹 Fonctionnalités clés</h2>
+      <ul>
+        <li><strong>Acquisition GNSS</strong> et transmission via LoRaWAN (The Things Network)</li>
+        <li><strong>Optimisation payload</strong> - Coordonnées codées sur 3 octets</li>
+        <li><strong>Visualisation web</strong> - Carte interactive avec Node-RED</li>
+        <li><strong>Gestion énergétique</strong> - Modes sleep/deep sleep + activation par accéléromètre</li>
+        <li><strong>Contrôle bidirectionnel</strong> - Arrêt à distance via downlink</li>
+        <li><strong>Notifications</strong> - SMS lors de déplacement et commande de mise en veille</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Architecture et Stack technique -->
+    <div class="text-block">
+      <h2>🔧 Architecture & Stack technique</h2>
+      <ul>
+        <li><strong>Hardware</strong> - FiPy/LoPy + Pytrack (GNSS), Gateway LoRaWAN TTIG, Raspberry Pi, Clé 2G/3G</li>
+        <li><strong>Embarqué</strong> - MicroPython sur Pycom avec gestion sleep/wake</li>
+        <li><strong>Réseau</strong> - LoRaWAN via The Things Network (TTN) + MQTT</li>
+        <li><strong>Backend</strong> - Node-RED sur Raspberry Pi (traitement données, cartographie, SMS)</li>
+        <li><strong>Frontend</strong> - Interface web avec carte interactive (Leaflet/OpenStreetMap)</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <ul>
+        <li>
+          <strong>AC31.02</strong> - Réaliser la documentation technique de ce projet 
+          (documentation du code exigée pour validation, spécifications techniques complètes)
+        </li>
+        <li>
+          <strong>AC31.03</strong> - Réaliser une maquette de démonstration du projet 
+          (prototype fonctionnel avec device embarqué, gateway LoRaWAN et interface web opérationnelle)
+        </li>
+        <li>
+          <strong>AC31.04</strong> - Défendre/argumenter un projet 
+          (soutenance orale avec présentation technique et justification des choix d'architecture)
+        </li>
+        <li>
+          <strong>AC32.02</strong> - Déployer un réseau d'accès sans fil pour le réseau d'entreprise en intégrant les enjeux de la sécurité 
+          (déploiement LoRaWAN avec gestion sécurisée des clés, respect duty cycle, communications chiffrées)
+        </li>
+        <li>
+          <strong>AC33.04</strong> - Déployer et maintenir une solution informatique 
+          (déploiement complet stack TTN + Node-RED + interface web, maintenance et supervision du système)
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Compétences transversales -->
+    <div class="text-block">
+      <h2>💡 Compétences transversales développées</h2>
+      <ul>
+        <li><strong>Travail d'équipe</strong> - Collaboration sur projet long (70,5h) avec répartition des tâches</li>
+        <li><strong>Résolution de problèmes</strong> - Débogage système complet (hardware + software + réseau)</li>
+        <li><strong>Communication technique</strong> - Documentation du code et soutenance orale</li>
+        <li><strong>Gestion de contraintes</strong> - Autonomie énergétique, duty cycle LoRaWAN (1%), payload limité (51 octets)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="image-container">
+    <img src="Images/LoRaWAN_Logo.png" alt="Architecture du système de géolocalisation LoRaWAN" class="project-image" />
+  </div>
+</section>
+
+</body>
+</html>

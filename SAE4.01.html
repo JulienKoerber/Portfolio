@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 4.01 - Application Bancaire Distribuée</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="return-button">
+  <a href="index.html">← Retour à l'accueil</a>
+</div>
+
+<section class="section">
+  <h1 class="page-main-title">SAE 4.01 - Développement d'une application bancaire</h1>
+
+  <div class="project-content">
+
+    <!-- Bloc : Contexte du projet -->
+    <div class="text-block">
+      <h2>📋 Contexte du projet</h2>
+      <p>
+        Conception et développement d'une <strong>application bancaire complète</strong> avec architecture 
+        distribuée et virtualisée, comprenant une interface client web, un système de validation automatique 
+        et un monitoring centralisé des logs.
+      </p>
+      <p>
+        Le projet met en œuvre une <strong>architecture microservices</strong> avec Docker, permettant 
+        aux clients d'effectuer des opérations bancaires (dépôts, retraits, virements) validées 
+        automatiquement par un agent bancaire intelligent.
+      </p>
+    </div>
+
+    <!-- Bloc : Architecture du système -->
+    <div class="text-block">
+      <h2>🏗️ Architecture distribuée</h2>
+      <ul>
+        <li><strong>Interface Client Web</strong> - Application Django pour connexion/inscription et opérations bancaires</li>
+        <li><strong>Agent Bancaire Automatique</strong> - Service de validation des transactions selon règles métier</li>
+        <li><strong>Base de données PostgreSQL</strong> - Stockage des comptes, transactions et logs</li>
+        <li><strong>Serveur NATS</strong> - Système de messagerie pour communication inter-services</li>
+        <li><strong>Interface Administrateur</strong> - Dashboard de monitoring et consultation des logs</li>
+        <li><strong>Conteneurisation Docker</strong> - Tous les services déployés via Docker Compose</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Fonctionnalités -->
+    <div class="text-block">
+      <h2>⚙️ Fonctionnalités développées</h2>
+      
+      <h3>👤 Partie Client</h3>
+      <ul>
+        <li><strong>Authentification</strong> - Connexion et création de compte sécurisée</li>
+        <li><strong>Opérations bancaires</strong> - Dépôts, retraits et virements entre comptes</li>
+        <li><strong>Historique</strong> - Consultation des transactions validées et en attente</li>
+        <li><strong>Interface responsive</strong> - Application web accessible depuis tous les appareils</li>
+      </ul>
+
+      <h3>🏦 Partie Agent Bancaire</h3>
+      <ul>
+        <li><strong>Validation automatique</strong> - Vérification des conditions métier (solde, limites, conformité)</li>
+        <li><strong>File d'attente</strong> - Gestion d'une table temporaire pour transactions en cours de traitement</li>
+        <li><strong>Transfert automatique</strong> - Migration des transactions validées vers la table définitive</li>
+        <li><strong>Nettoyage périodique</strong> - Suppression des transactions traitées de la file d'attente</li>
+      </ul>
+
+      <h3>📊 Gestion des Logs</h3>
+      <ul>
+        <li><strong>Monitoring centralisé</strong> - Collecte de tous les événements système</li>
+        <li><strong>Interface administrateur</strong> - Dashboard réservé aux superviseurs (/bank-admin/logs)</li>
+        <li><strong>Filtres avancés</strong> - Tri par utilisateur, date, type d'opération</li>
+        <li><strong>Traçabilité complète</strong> - Historique exhaustif pour audit et dépannage</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Workflow technique -->
+    <div class="text-block">
+      <h2>🔄 Workflow de l'application</h2>
+      <ol>
+        <li><strong>Action client</strong> - L'utilisateur effectue une opération via l'interface Django</li>
+        <li><strong>Enregistrement temporaire</strong> - La transaction est insérée dans une table PostgreSQL temporaire</li>
+        <li><strong>Notification NATS</strong> - Un message est envoyé via NATS au service agent bancaire</li>
+        <li><strong>Validation</strong> - L'agent vérifie les conditions et valide ou rejette la transaction</li>
+        <li><strong>Mise à jour définitive</strong> - Si validée, la transaction passe dans la table définitive</li>
+        <li><strong>Nettoyage</strong> - La transaction est supprimée de la file d'attente temporaire</li>
+        <li><strong>Actualisation client</strong> - L'interface se met à jour pour refléter la transaction validée</li>
+        <li><strong>Logging</strong> - Toutes les étapes sont tracées dans les logs accessibles aux administrateurs</li>
+      </ol>
+    </div>
+
+    <!-- Bloc : Stack technique -->
+    <div class="text-block">
+      <h2>🔧 Stack technique</h2>
+      <ul>
+        <li><strong>Backend</strong> - Django (Python) avec Django REST Framework</li>
+        <li><strong>Base de données</strong> - PostgreSQL avec tables temporaires et définitives</li>
+        <li><strong>Messagerie</strong> - NATS pour communication asynchrone inter-services</li>
+        <li><strong>Agent</strong> - Script Python (AgentBancaire.py) exécuté en conteneur</li>
+        <li><strong>Conteneurisation</strong> - Docker + Docker Compose (multi-conteneurs)</li>
+        <li><strong>Frontend</strong> - Django Templates avec Bootstrap pour interface responsive</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--clr-text-dark);">
+        Ce projet a permis de développer et valider les compétences suivantes du référentiel BUT R&T DevCloud :
+      </p>
+      <ul>
+        <li>
+          <strong>AC24.02DevCloud</strong> - Virtualiser un environnement 
+          (conteneurisation complète avec Docker, orchestration multi-services via Docker Compose)
+        </li>
+        <li>
+          <strong>AC24.03DevCloud</strong> - Utiliser les services du Cloud 
+          (PostgreSQL conteneurisé, NATS message broker, services distribués)
+        </li>
+        <li>
+          <strong>AC24.04DevCloud</strong> - Analyser un service Cloud au travers des métriques 
+          (interface de logs, monitoring des transactions, traçabilité complète)
+        </li>
+        <li>
+          <strong>AC25.01DevCloud</strong> - Développer un microservice 
+          (agent bancaire autonome, API Django REST, services découplés communicant via NATS)
+        </li>
+        <li>
+          <strong>AC25.02DevCloud</strong> - Mettre en production une application 
+          (déploiement containerisé, gestion des dépendances, configuration multi-environnements)
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Compétences transversales -->
+    <div class="text-block">
+      <h2>💡 Compétences transversales développées</h2>
+      <ul>
+        <li><strong>Architecture microservices</strong> - Conception de services découplés et autonomes</li>
+        <li><strong>Conteneurisation avancée</strong> - Docker, Dockerfile, docker-compose.yml, multi-stage builds</li>
+        <li><strong>Développement Backend</strong> - Django, API REST, ORM, authentification</li>
+        <li><strong>Systèmes de messagerie</strong> - NATS pour communication asynchrone inter-services</li>
+        <li><strong>Bases de données relationnelles</strong> - PostgreSQL, transactions, tables temporaires</li>
+        <li><strong>Gestion de workflows</strong> - Automatisation de processus métier complexes</li>
+        <li><strong>Logging & Monitoring</strong> - Traçabilité, audit, interface d'administration</li>
+        <li><strong>Travail en binôme</strong> - Collaboration avec Maël L., répartition des tâches</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Virtualisation -->
+    <div class="text-block">
+      <h2>🐳 Virtualisation et déploiement</h2>
+      <p>
+        L'application est <strong>entièrement containerisée</strong> pour optimiser les ressources et faciliter le déploiement :
+      </p>
+      <ul>
+        <li><strong>docker-compose.yml</strong> - Orchestration de 4 services interconnectés</li>
+        <li><strong>Dockerfile</strong> - Images personnalisées pour Django et agent bancaire</li>
+        <li><strong>requirements.txt</strong> - Gestion des dépendances Python pour reproductibilité</li>
+        <li><strong>Réseau Docker</strong> - Communication sécurisée entre conteneurs</li>
+        <li><strong>Volumes persistants</strong> - Sauvegarde des données PostgreSQL</li>
+        <li><strong>Prêt pour production</strong> - Architecture scalable déployable sur serveur public</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="image-container">
+    <img src="Images/SAE401_banking_app.png" alt="Architecture de l'application bancaire distribuée" class="project-image" />
+  </div>
+</section>
+
+</body>
+</html>

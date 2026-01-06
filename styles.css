@@ -377,9 +377,31 @@ body {
 .page-main-title {
   text-align: center;
   font-size: 3.2rem;
-  margin: 2rem 0;
+  font-weight: 800;
+  margin: 3rem 0;
+  padding: 2rem 1rem;
   color: var(--clr-primary);
-  text-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, var(--clr-primary), #8b5cf6, var(--clr-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.page-main-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--clr-primary), transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
 }
 
 /* Bannière projet */
@@ -529,7 +551,7 @@ body {
 
 
 .return-button {
-  position: absolute;
+  position: fixed;
   top: 1.5rem;
   left: 1.5rem;
   background: var(--clr-surface);
@@ -540,17 +562,22 @@ body {
   z-index: 1100;
   transition: all 0.3s;
   border: 1px solid rgba(99, 102, 241, 0.3);
+  cursor: pointer;
 }
 
 .return-button a {
   text-decoration: none;
   color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .return-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4), 0 0 30px rgba(99, 102, 241, 0.2);
   border-color: var(--clr-primary);
+  background: var(--clr-surface-hover);
 }
 
 .slider-wrapper {
@@ -1112,6 +1139,11 @@ body {
 /* STYLES POUR LES SECTIONS PROJETS BUT 1 ET BUT 2 */
 /* ================================================== */
 
+/* Section Projets BUT 3 */
+.section--projects-but3 {
+  position: relative;
+}
+
 /* Section Projets BUT 2 */
 .section--projects-but2 {
   /* background: linear-gradient(135deg, #f0f8ff, #e6f3ff); */
@@ -1192,6 +1224,22 @@ body {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(99, 102, 241, 0.2);
   border-color: var(--clr-primary);
+}
+
+/* Header des cartes de projet BUT 3 */
+.section--projects-but3 .project-card:hover {
+  border-color: var(--clr-primary);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(99, 102, 241, 0.2);
+}
+
+.section--projects-but3 .project-header {
+  background: linear-gradient(135deg, var(--clr-primary), #8b5cf6);
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 /* Header des cartes de projet BUT 2 */
