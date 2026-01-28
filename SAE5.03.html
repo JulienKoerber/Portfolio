@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAE 5.03 - E-Commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="return-button">
+  <a href="index.html">← Retour à l'accueil</a>
+</div>
+
+<section class="section">
+  <h1 class="page-main-title">SAE 5.03 - E-Commerce</h1>
+
+  <div class="project-content">
+
+    <!-- Bloc : Contexte du projet -->
+    <div class="text-block">
+      <h2>Objectifs du Projet</h2>
+      <ul>
+        <p></p>Concevoir et déployer une application e-commerce complète </ul><br>
+        <li><strong>Scalabilité</strong> : chaque microservice peut être dimensionné indépendamment selon la charge</li>
+        <li><strong>Résilience</strong> : la défaillance d'un service n'entraîne pas l'arrêt global de l'application</li>
+        <li><strong>Isolation</strong> :
+          <ul>
+            <li>Isolation fonctionnelle (un service = une responsabilité métier)</li>
+            <li>Isolation des données (une base de données par service)</li>
+          </ul>
+        </li>
+        <li><strong>Automatisation complète du déploiement et de la configuration</strong></li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Fonctionnalités -->
+    <div class="text-block">
+      <h2>Fonctionnalités clés</h2>
+      <h3>🔐 API Clients / Authentification</h3>
+      <p><strong>Rôle fonctionnel :</strong></p>
+      <ul>
+        <li>Inscription des utilisateurs</li>
+        <li>Connexion</li>
+        <li>Gestion du profil utilisateur</li>
+      </ul>
+      
+      <p><strong>Sécurité :</strong></p>
+      <ul>
+        <li>Authentification basée sur JWT (JSON Web Tokens)</li>
+        <li>Lors de la connexion, un token est généré</li>
+        <li>Ce token est requis pour accéder aux autres microservices, assurant une authentification centralisée et stateless</li>
+      </ul>
+      
+      <p><strong>Base de données :</strong></p>
+      <ul>
+        <li>Base PostgreSQL dédiée</li>
+        <li>Données utilisateurs totalement isolées des autres services</li>
+      </ul>
+      
+      <p>Cette API sert de point d'entrée sécurité pour l'ensemble du système.</p>
+    </div>
+
+    <!-- Bloc : Architecture Globale-->
+    <div class="text-block">
+      <h2>Architecture Globale</h2>
+      <ul>L'application repose sur un cluster Kubernetes composé de 3 nœuds:</ul>
+      <ul>
+        <li><strong>1 noeud Master</strong> : orchestration et gestion du cluster</li>
+        <li><strong>2 noeuds worker</strong> : exécution des microservices applicatifs</li>
+      </ul>
+      <ul>Chaque microservice est conteneurisé via Docker et déployé sous forme de pods Kubernetes, exposés par des Services.</ul>
+    </div>
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <ul>
+        <li>
+          <strong>AC34.01</strong> DevCloud – Concevoir, administrer et superviser une infrastructure Cloud (
+            mise en place et administration d’un cluster Kubernetes multi-nœuds sur machines virtuelles Debian)
+        </li>
+        <li>
+          <strong>AC34.02</strong> DevCloud – Orchestrer les ressources Cloud 
+          (orchestration des microservices via Kubernetes avec Deployments, Services, ConfigMaps et Secrets)
+        </li>
+        <li>
+          <strong>AC35.02</strong> DevCloud – Concevoir, gérer et sécuriser un environnement de 
+          microservices (architecture microservices sécurisée avec authentification JWT, isolation des bases de données et gestion sécurisée des configurations)
+        </li>
+        <li>
+            <strong>AC35.03</strong> DevCloud – Gérer son infrastructure comme du code 
+            (automatisation complète de l’infrastructure avec Vagrant, Ansible et manifests Kubernetes versionnés)
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="video-container">
+  <video autoplay loop muted playsinline>
+    <source src="Images/demo_e-commerce.mp4" type="video/mp4">
+  </video>
+</div>
+</section>
+
+</body>
+</html>

@@ -521,6 +521,32 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Styles pour les vidéos de projet */
+.video-container {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  max-width: 70%;
+  height: auto;
+  border: 3px solid rgba(99, 102, 241, 0.4);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(99, 102, 241, 0.2);
+  padding: 0.5rem;
+  background: var(--clr-surface);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(99, 102, 241, 0.3);
+}
 
 .project-image {
   max-width: 70%;
@@ -541,6 +567,10 @@ body {
 
 @media (max-width: 768px) {
   .project-image {
+    max-width: 90%;
+  }
+  
+  .video-container video {
     max-width: 90%;
   }
 }
@@ -1222,18 +1252,18 @@ body {
 
 .project-card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(14, 223, 24, 0.2);
   border-color: var(--clr-primary);
 }
 
 /* Header des cartes de projet BUT 3 */
 .section--projects-but3 .project-card:hover {
   border-color: var(--clr-primary);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 20px 40px rgba(29, 221, 45, 0.4), 0 0 60px rgba(99, 102, 241, 0.2);
 }
 
 .section--projects-but3 .project-header {
-  background: linear-gradient(135deg, var(--clr-primary), #8b5cf6);
+  background: linear-gradient(135deg, var(--clr-primary), #76dc1e);
   color: white;
   padding: 1.5rem;
   display: flex;
