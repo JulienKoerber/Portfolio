@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krojanty – Jeu de stratégie sur plateau</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="return-button">
+  <a href="index.html">← Retour à l'accueil</a>
+</div>
+
+<section class="section">
+  <h1 class="page-main-title">Krojanty – Jeu de stratégie sur plateau</h1>
+
+  <div class="project-content">
+
+    <!-- Bloc : Contexte du projet -->
+    <div class="text-block">
+      <h2>Objectifs du Projet</h2>
+      <ul>
+        <li>Projet réalisé dans le cadre de l'Immersion ENSISA 2025, en équipe de 7 personnes</li>
+        <li><strong>Objectif principal</strong> : Développer un jeu de stratégie inspiré du Tablut/Hnefatafl, basé sur la charge historique de cavalerie polonaise de 1939</li>
+        <li><strong>Contraintes majeures</strong> : Implémenter un système de contrôle de territoire, gérer 4 conditions de victoire différentes, et limiter les parties à 64 tours maximum</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Fonctionnalités -->
+    <div class="text-block">
+      <h2>Fonctionnalités clés</h2>
+      <ul>
+        <li>4 conditions de victoire : Conquête (roi sur cité adverse), Extermination (8 soldats capturés), Exécution (roi capturé), ou Contrôle (meilleur score après 64 tours)</li>
+        <li>Plateau de jeu 9×9 avec gestion de deux joueurs antagonistes (rouge et bleu)</li>
+        <li>Système de déplacement des pièces (roi et 9 soldats par joueur) en ligne verticale/horizontale</li>
+        <li>Mécaniques de capture avancées : "Linca" (prise en sandwich) et "Seultou" (prise par poussée)</li>
+        <li>Système de contrôle territorial dynamique avec calcul de score en temps réel</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Architecture Globale-->
+    <div class="text-block">
+      <h2>Architecture Globale</h2>
+      <h3>Infrastructure :</h3>
+      <ul>
+        <li>Application console développée en langage C</li>
+        <li>Gestion de la logique de jeu et des règles complexes en programmation procédurale</li>
+      </ul>
+      
+      <h3>Technologies / outils :</h3>
+      <ul>
+        <li>Langage C</li>
+        <li>Gestion de structures de données pour le plateau, les pièces et le contrôle territorial</li>
+        <li>Algorithmes de validation des mouvements et de détection des captures</li>
+      </ul>
+    </div>
+
+    <!-- Bloc : Apprentissages Critiques -->
+    <div class="text-block">
+      <h2>🎯 Apprentissages critiques validés</h2>
+      <ul>
+        <li>
+          <strong>AC31.03</strong> – Réaliser une maquette de démonstration du projet (développement du jeu fonctionnel en C)
+        </li>
+        <li>
+          <strong>AC31.06</strong> – Gérer le projet et les différentes étapes de sa mise en œuvre en respectant les délais (planification et répartition des tâches en équipe de 7)
+        </li>
+        <li>
+          <strong>AC32.05</strong> – Collaborer en mode projet (coordination et travail collaboratif sur le développement)
+        </li>
+        <li>
+          <strong>AC33.01</strong> – Élaborer les spécifications techniques et le cahier des charges d'une application informatique (définition des règles, structures de données et algorithmes)
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="image-container">
+        <img src="Images/krojanty.png" alt="Image du jeu Krojanty" class="project-image" />
+    </div>
+</div>
+</section>
+
+</body>
+</html>
