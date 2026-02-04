@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-nginx-config
+  namespace: ecommerce
+data:
+  default.conf: |
+    server {
+        listen 80;
+        server_name _;
+
+        client_max_body_size 50M;
+
+        # Disable sendfile to avoid "Invalid argument" errors in virtualized environments
+        sendfile off;
+
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+
+        resolver 10.96.0.10 valid=30s;
+
+        location /catalogue/ {
+            set $catalogue_upstream catalogue-service.ecommerce.svc.cluster.local;
+            rewrite ^/catalogue/(.*) /$1 break;
+            proxy_pass http://$catalogue_upstream:80;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Prefix /catalogue;
+            proxy_redirect off;
+            # Rewrite specific absolute paths inside HTML/JS so Swagger UI works under /catalogue/
+            sub_filter_types application/javascript application/json;
+            sub_filter_once off;
+            sub_filter '"/openapi.json"' '"/catalogue/openapi.json"';
+            sub_filter '"/docs"' '"/catalogue/docs"';
+            sub_filter 'href="/docs"' 'href="/catalogue/docs"';
+            sub_filter 'href="/openapi.json"' 'href="/catalogue/openapi.json"';
+            sub_filter 'src="/docs"' 'src="/catalogue/docs"';
+            sub_filter 'src="/openapi.json"' 'src="/catalogue/openapi.json"';
+        }
+
+        location /client/ {
+            set $client_upstream client-service.ecommerce.svc.cluster.local;
+            rewrite ^/client/(.*) /$1 break;
+            proxy_pass http://$client_upstream:80;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Prefix /client;
+            proxy_redirect off;
+            sub_filter_types application/javascript application/json;
+            sub_filter_once off;
+            sub_filter '"/openapi.json"' '"/client/openapi.json"';
+            sub_filter '"/docs"' '"/client/docs"';
+            sub_filter 'href="/docs"' 'href="/client/docs"';
+            sub_filter 'href="/openapi.json"' 'href="/client/openapi.json"';
+            sub_filter 'src="/docs"' 'src="/client/docs"';
+            sub_filter 'src="/openapi.json"' 'src="/client/openapi.json"';
+        }
+
+        location /panier/ {
+            set $panier_upstream panier-service.ecommerce.svc.cluster.local;
+            rewrite ^/panier/(.*) /$1 break;
+            proxy_pass http://$panier_upstream:80;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Prefix /panier;
+            proxy_redirect off;
+            sub_filter_types application/javascript application/json;
+            sub_filter_once off;
+            sub_filter '"/openapi.json"' '"/panier/openapi.json"';
+            sub_filter '"/docs"' '"/panier/docs"';
+            sub_filter 'href="/docs"' 'href="/panier/docs"';
+            sub_filter 'href="/openapi.json"' 'href="/panier/openapi.json"';
+            sub_filter 'src="/docs"' 'src="/panier/docs"';
+            sub_filter 'src="/openapi.json"' 'src="/panier/openapi.json"';
+        }
+
+        location /commandes/ {
+            set $commandes_upstream commandes-service.ecommerce.svc.cluster.local;
+            rewrite ^/commandes/(.*) /$1 break;
+            proxy_pass http://$commandes_upstream:80;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Prefix /commandes;
+            proxy_redirect off;
+            sub_filter_types application/javascript application/json;
+            sub_filter_once off;
+            sub_filter '"/openapi.json"' '"/commandes/openapi.json"';
+            sub_filter '"/docs"' '"/commandes/docs"';
+            sub_filter 'href="/docs"' 'href="/commandes/docs"';
+            sub_filter 'href="/openapi.json"' 'href="/commandes/openapi.json"';
+            sub_filter 'src="/docs"' 'src="/commandes/docs"';
+            sub_filter 'src="/openapi.json"' 'src="/commandes/openapi.json"';
+        }
+
+        location / {
+            # Serve static frontend files from the nginx container
+            root /usr/share/nginx/html;
+            try_files $uri $uri/ /index.html;
+        }
+    }

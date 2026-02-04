@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-api
+  namespace: ecommerce
+  labels:
+    app: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: client
+        image: client-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        env:
+        - name: DB_HOST
+          value: "client-db"
+        - name: DB_USER
+          value: "user"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_PASSWORD
+        - name: DB_NAME
+          value: "client"
+        - name: DB_PORT
+          value: "5432"
+        - name: JWT_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: JWT_SECRET_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-service
+  namespace: ecommerce
+spec:
+  selector:
+    app: client
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30082

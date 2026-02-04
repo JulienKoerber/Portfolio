@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commandes-db
+  namespace: ecommerce
+  labels:
+    app: commandes-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commandes-db
+  template:
+    metadata:
+      labels:
+        app: commandes-db
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: postgres
+        image: postgres:13
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: "user"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_PASSWORD
+        - name: POSTGRES_DB
+          value: "commandes"
+        volumeMounts:
+        - name: db-storage
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: commandes-db-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: commandes-db
+  namespace: ecommerce
+spec:
+  selector:
+    app: commandes-db
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
+  type: ClusterIP

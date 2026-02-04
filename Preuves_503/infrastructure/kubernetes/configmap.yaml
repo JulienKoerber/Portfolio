@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: ecommerce
+data:
+  CATALOGUE_API_URL: "http://catalogue-service.ecommerce.svc.cluster.local"
+  PANIER_API_URL: "http://panier-service.ecommerce.svc.cluster.local"
+  CLIENT_API_URL: "http://client-service.ecommerce.svc.cluster.local"

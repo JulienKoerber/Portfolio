@@ -1,0 +1,63 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'rbconfig'
+
+Vagrant.configure("2") do |config|
+  # Detect host architecture and choose a box accordingly.
+  # If your host is arm64 (aarch64) you may need an arm64-compatible box.
+  host_arch = RbConfig::CONFIG['host_cpu'] || RUBY_PLATFORM
+  box_name = if host_arch.to_s.match(/aarch64|arm64/)
+               # Adjust this box name if you use a different arm64 box
+               "bento/debian-12"
+             else
+               "bento/debian-12"
+             end
+
+  # Configuration commune pour toutes les VMs
+  config.vm.box = box_name # Debian 12
+  config.vm.box_check_update = false
+
+  # Sync root project directory to /vagrant in VM
+  config.vm.synced_folder "../", "/vagrant"
+
+  # Provisioning Ansible unique pour tout le monde
+  # Le playbook s'adapte selon le hostname de la machine
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "ansible/setup.yml"
+    ansible.provisioning_path = "/vagrant/infrastructure"
+  end
+
+  # Configuration du Master
+  config.vm.define "master" do |master|
+    master.vm.hostname = "k8s-master"
+    master.vm.network "private_network", ip: "192.168.56.10"
+    
+    master.vm.provider "virtualbox" do |vb|
+      vb.memory = "4096"
+      vb.cpus = 6
+    end
+  end
+
+  # Configuration du Worker 1
+  config.vm.define "worker1" do |worker|
+    worker.vm.hostname = "k8s-worker-1"
+    worker.vm.network "private_network", ip: "192.168.56.11"
+    
+    worker.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 4
+    end
+  end
+
+  # Configuration du Worker 2
+  config.vm.define "worker2" do |worker|
+    worker.vm.hostname = "k8s-worker-2"
+    worker.vm.network "private_network", ip: "192.168.56.12"
+    
+    worker.vm.provider "virtualbox" do |vb|
+      vb.memory = "2048"
+      vb.cpus = 4
+    end
+  end
+end

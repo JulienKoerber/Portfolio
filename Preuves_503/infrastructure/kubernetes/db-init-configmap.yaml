@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-init-scripts
+  namespace: ecommerce
+data:
+  init-catalogue-data.sql: |
+    -- Insertion de données de test pour le catalogue
+    -- La base de données 'catalogue' est déjà créée par la variable d'environnement POSTGRES_DB
+
+    -- Création de la table products si elle n'existe pas (au cas où)
+    CREATE TABLE IF NOT EXISTS products (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        description TEXT,
+        price DECIMAL(10,2) NOT NULL CHECK (price >= 0),
+        stock INTEGER NOT NULL DEFAULT 0 CHECK (stock >= 0),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+    -- Insertion de produits de test
+    INSERT INTO products (name, description, price, stock) VALUES
+    ('Ordinateur Portable Dell XPS 13', 'Ordinateur portable haute performance avec écran 13 pouces', 1299.99, 50),
+    ('Souris Logitech MX Master 3', 'Souris ergonomique sans fil avec connexion multi-appareils', 89.99, 100),
+    ('Clavier mécanique RGB', 'Clavier gaming mécanique avec éclairage RGB personnalisable', 149.99, 30),
+    ('Écran 27 pouces 4K', 'Moniteur 4K UHD avec connexion HDMI et DisplayPort', 399.99, 25),
+    ('Casque audio Bose QuietComfort', 'Casque à réduction de bruit active avec micro intégré', 279.99, 40);

@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commandes-api
+  namespace: ecommerce
+  labels:
+    app: commandes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: commandes
+  template:
+    metadata:
+      labels:
+        app: commandes
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: commandes
+        image: commandes-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        readinessProbe:
+          httpGet:
+            path: /docs
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /docs
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        env:
+        - name: DB_HOST
+          value: "commandes-db"
+        - name: DB_USER
+          value: "user"
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_PASSWORD
+        - name: DB_NAME
+          value: "commandes"
+        - name: DB_PORT
+          value: "5432"
+        - name: CATALOGUE_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: CATALOGUE_API_URL
+        - name: PANIER_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: PANIER_API_URL
+        - name: CLIENT_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: CLIENT_API_URL
+        - name: JWT_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: JWT_SECRET_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: commandes-service
+  namespace: ecommerce
+spec:
+  selector:
+    app: commandes
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 30084

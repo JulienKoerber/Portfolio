@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: panier-redis
+  namespace: ecommerce
+  labels:
+    app: panier-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: panier-redis
+  template:
+    metadata:
+      labels:
+        app: panier-redis
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: redis
+        image: redis:7-alpine
+        ports:
+        - containerPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: panier-redis
+  namespace: ecommerce
+spec:
+  selector:
+    app: panier-redis
+  ports:
+    - protocol: TCP
+      port: 6379
+      targetPort: 6379

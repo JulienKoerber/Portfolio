@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-db
+  namespace: ecommerce
+  labels:
+    app: client-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-db
+  template:
+    metadata:
+      labels:
+        app: client-db
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: postgres
+        image: postgres:13
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: "user"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_PASSWORD
+        - name: POSTGRES_DB
+          value: "client"
+        volumeMounts:
+        - name: db-storage
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: client-db-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-db
+  namespace: ecommerce
+spec:
+  selector:
+    app: client-db
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
+  type: ClusterIP

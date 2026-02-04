@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: catalogue-db-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/catalogue-db"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: catalogue-db-pvc
+  namespace: ecommerce
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: client-db-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/client-db"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: client-db-pvc
+  namespace: ecommerce
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: commandes-db-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/commandes-db"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: commandes-db-pvc
+  namespace: ecommerce
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

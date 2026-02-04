@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: panier-api
+  namespace: ecommerce
+  labels:
+    app: panier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: panier
+  template:
+    metadata:
+      labels:
+        app: panier
+    spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: panier
+        image: panier-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        readinessProbe:
+          httpGet:
+            path: /docs
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /docs
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 10
+        env:
+        - name: CATALOGUE_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: CATALOGUE_API_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: panier-service
+  namespace: ecommerce
+spec:
+  selector:
+    app: panier
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 30083

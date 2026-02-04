@@ -20,16 +20,16 @@
     <!-- Bloc : Contexte du projet -->
     <div class="text-block">
       <h2>📋 Contexte du projet</h2>
-      <p>
+      <ul>
         Conception et développement d'une <strong>application bancaire complète</strong> avec architecture 
         distribuée et virtualisée, comprenant une interface client web, un système de validation automatique 
         et un monitoring centralisé des logs.
-      </p>
-      <p>
+      </ul>
+      <ul>
         Le projet met en œuvre une <strong>architecture microservices</strong> avec Docker, permettant 
         aux clients d'effectuer des opérations bancaires (dépôts, retraits, virements) validées 
         automatiquement par un agent bancaire intelligent.
-      </p>
+      </ul>
     </div>
 
     <!-- Bloc : Architecture du système -->
@@ -74,34 +74,6 @@
       </ul>
     </div>
 
-    <!-- Bloc : Workflow technique -->
-    <div class="text-block">
-      <h2>🔄 Workflow de l'application</h2>
-      <ol>
-        <li><strong>Action client</strong> - L'utilisateur effectue une opération via l'interface Django</li>
-        <li><strong>Enregistrement temporaire</strong> - La transaction est insérée dans une table PostgreSQL temporaire</li>
-        <li><strong>Notification NATS</strong> - Un message est envoyé via NATS au service agent bancaire</li>
-        <li><strong>Validation</strong> - L'agent vérifie les conditions et valide ou rejette la transaction</li>
-        <li><strong>Mise à jour définitive</strong> - Si validée, la transaction passe dans la table définitive</li>
-        <li><strong>Nettoyage</strong> - La transaction est supprimée de la file d'attente temporaire</li>
-        <li><strong>Actualisation client</strong> - L'interface se met à jour pour refléter la transaction validée</li>
-        <li><strong>Logging</strong> - Toutes les étapes sont tracées dans les logs accessibles aux administrateurs</li>
-      </ol>
-    </div>
-
-    <!-- Bloc : Stack technique -->
-    <div class="text-block">
-      <h2>🔧 Stack technique</h2>
-      <ul>
-        <li><strong>Backend</strong> - Django (Python) avec Django REST Framework</li>
-        <li><strong>Base de données</strong> - PostgreSQL avec tables temporaires et définitives</li>
-        <li><strong>Messagerie</strong> - NATS pour communication asynchrone inter-services</li>
-        <li><strong>Agent</strong> - Script Python (AgentBancaire.py) exécuté en conteneur</li>
-        <li><strong>Conteneurisation</strong> - Docker + Docker Compose (multi-conteneurs)</li>
-        <li><strong>Frontend</strong> - Django Templates avec Bootstrap pour interface responsive</li>
-      </ul>
-    </div>
-
     <!-- Bloc : Apprentissages Critiques -->
     <div class="text-block">
       <h2>🎯 Apprentissages critiques validés</h2>
@@ -129,37 +101,6 @@
           <strong>AC25.02DevCloud</strong> - Mettre en production une application 
           (déploiement containerisé, gestion des dépendances, configuration multi-environnements)
         </li>
-      </ul>
-    </div>
-
-    <!-- Bloc : Compétences transversales -->
-    <div class="text-block">
-      <h2>💡 Compétences transversales développées</h2>
-      <ul>
-        <li><strong>Architecture microservices</strong> - Conception de services découplés et autonomes</li>
-        <li><strong>Conteneurisation avancée</strong> - Docker, Dockerfile, docker-compose.yml, multi-stage builds</li>
-        <li><strong>Développement Backend</strong> - Django, API REST, ORM, authentification</li>
-        <li><strong>Systèmes de messagerie</strong> - NATS pour communication asynchrone inter-services</li>
-        <li><strong>Bases de données relationnelles</strong> - PostgreSQL, transactions, tables temporaires</li>
-        <li><strong>Gestion de workflows</strong> - Automatisation de processus métier complexes</li>
-        <li><strong>Logging & Monitoring</strong> - Traçabilité, audit, interface d'administration</li>
-        <li><strong>Travail en binôme</strong> - Collaboration avec Maël L., répartition des tâches</li>
-      </ul>
-    </div>
-
-    <!-- Bloc : Virtualisation -->
-    <div class="text-block">
-      <h2>🐳 Virtualisation et déploiement</h2>
-      <p>
-        L'application est <strong>entièrement containerisée</strong> pour optimiser les ressources et faciliter le déploiement :
-      </p>
-      <ul>
-        <li><strong>docker-compose.yml</strong> - Orchestration de 4 services interconnectés</li>
-        <li><strong>Dockerfile</strong> - Images personnalisées pour Django et agent bancaire</li>
-        <li><strong>requirements.txt</strong> - Gestion des dépendances Python pour reproductibilité</li>
-        <li><strong>Réseau Docker</strong> - Communication sécurisée entre conteneurs</li>
-        <li><strong>Volumes persistants</strong> - Sauvegarde des données PostgreSQL</li>
-        <li><strong>Prêt pour production</strong> - Architecture scalable déployable sur serveur public</li>
       </ul>
     </div>
 
