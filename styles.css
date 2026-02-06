@@ -479,6 +479,21 @@ body {
   list-style-type: circle;
 }
 
+/* Liens vers les AC */
+.text-block a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+.text-block a:hover {
+  color: #818cf8;
+  border-bottom-color: #818cf8;
+}
+.text-block a strong {
+  font-weight: 700;
+}
+
 /* Ajustements mobiles */
 @media (max-width: 600px) {
   .page-main-title {
